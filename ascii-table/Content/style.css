@@ -15,3 +15,15 @@
     background: linear-gradient(to bottom, #abc7d8, #657c70);
     -webkit-mask-image: linear-gradient(to left, white, transparent); }
 
+.main-content {
+  max-width: 1540px;
+  background: rgba(255, 255, 255, 0.6);
+  -moz-box-shadow: inherit;
+  -webkit-box-shadow: inherit;
+  box-shadow: 3px 0 5px #bdbdbd; }
+
+.navbar {
+  margin: 0 -15px;
+  padding: 1.2rem 1rem;
+  background: #fafafa; }
+
