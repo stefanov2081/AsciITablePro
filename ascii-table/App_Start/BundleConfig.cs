@@ -9,7 +9,8 @@ namespace ascii_table
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Scripts/script").Include(
-                        "~/Scripts/script.js"));
+                "~/Scripts/char.js", 
+                "~/Scripts/script.js"));
 
             bundles.Add(new StyleBundle("~/Content/style").Include(
                       "~/Content/style.min.css"));
