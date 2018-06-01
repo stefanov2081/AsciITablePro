@@ -46,22 +46,24 @@
 .ascii-table-container {
   display: flex; }
 
-.ascii-table thead tr {
-  background: #fff; }
-
-.ascii-table thead th {
-  border: none;
-  font-weight: 600; }
-
-.ascii-table tbody tr {
-  background: #fff; }
-  .ascii-table tbody tr:nth-of-type(odd) {
-    background: #fafafa; }
-  .ascii-table tbody tr:hover {
-    background: #42a5f5;
-    color: #fff; }
-
-.ascii-table th,
-.ascii-table td {
-  padding: .3rem 1rem; }
+.ascii-table {
+  margin: 0;
+  border: 1px solid #fff; }
+  .ascii-table thead tr {
+    background: #fff; }
+  .ascii-table thead th {
+    border: none;
+    font-weight: 600; }
+  .ascii-table tbody tr {
+    background: #fff; }
+    .ascii-table tbody tr:nth-of-type(odd) {
+      background: rgba(255, 255, 255, 0.9); }
+    .ascii-table tbody tr:hover {
+      background: #42a5f5;
+      color: #fff; }
+  .ascii-table th,
+  .ascii-table td {
+    padding: .3rem 1rem; }
+  .ascii-table.col + .col {
+    margin: 0 0 0 .5rem; }
 
