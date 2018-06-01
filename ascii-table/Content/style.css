@@ -24,6 +24,8 @@
 
 .navbar {
   margin: 0 -15px;
-  padding: 1.2rem 1rem;
+  padding: 1.2rem 2.8rem;
   background: #fafafa; }
+  .navbar .nav-link {
+    text-transform: uppercase; }
 
