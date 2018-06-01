@@ -1,22 +1,8 @@
-﻿@import "variables.scss";
+﻿@import "variables";
+@import "mixins";
 
 h1 {
     color: $heading-color;
-}
-
-@mixin FourPointGradient($color1, $color2, $color3, $color4) {
-    background: linear-gradient(to bottom, $color1, $color3);
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: inherit;
-        height: inherit;
-        background: linear-gradient(to bottom, $color2, $color4);
-        -webkit-mask-image: linear-gradient(to left, white, transparent);
-    }
 }
 
 .wrapper {
@@ -27,7 +13,7 @@ h1 {
 
 .main-content {
     max-width: 1540px;
-    background: rgba($light-background, .6);
+    background: rgba($bg-white, .6);
     -moz-box-shadow: inherit;
     -webkit-box-shadow: inherit;
     box-shadow: 3px 0 5px $shadow-color;

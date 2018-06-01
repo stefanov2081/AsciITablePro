@@ -1,0 +1,14 @@
+﻿@mixin FourPointGradient($color1, $color2, $color3, $color4) {
+    background: linear-gradient(to bottom, $color1, $color3);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: inherit;
+        background: linear-gradient(to bottom, $color2, $color4);
+        -webkit-mask-image: linear-gradient(to left, white, transparent);
+    }
+}
