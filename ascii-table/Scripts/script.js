@@ -15,6 +15,5 @@
         console.log('hex: ' + asciiTable[i].hexaDecimal);
         console.log('glyph: ' + asciiTable[i].glyph);
         console.log('-------------');
-
     }
 })();
