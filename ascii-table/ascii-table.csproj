@@ -187,6 +187,7 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="Content\variables.scss" />
+    <Content Include="Content\mixins.scss" />
     <None Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>

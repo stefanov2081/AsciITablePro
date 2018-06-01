@@ -1,7 +1,5 @@
 ﻿body {
-  font-family: 'Work Sans', sans-serif; }
-
-h1 {
+  font-family: 'Work Sans', sans-serif;
   color: #757575; }
 
 .wrapper {
@@ -18,7 +16,7 @@ h1 {
     background: linear-gradient(to bottom, #abc7d8, #657c70);
     -webkit-mask-image: linear-gradient(to left, white, transparent); }
 
-.main-content {
+.ascii-container {
   max-width: 1540px;
   position: relative;
   background: rgba(255, 255, 255, 0.6);
@@ -26,22 +24,44 @@ h1 {
   -webkit-box-shadow: inherit;
   box-shadow: 0 3px 5px rgba(117, 117, 117, 0.35); }
 
-.navbar {
+.ascii-nav {
   margin: 0 -15px;
   padding: 1.2rem 2.8rem;
   background: #fafafa; }
-  .navbar .nav-link {
+  .ascii-nav .nav-link {
     font-weight: 600;
     text-transform: uppercase; }
 
-.card {
+.ascii-card {
   margin: 0 -15px;
   border: none;
   background: none; }
-  .card .card-header,
-  .card .card-body {
+  .ascii-card .card-header,
+  .ascii-card .card-body {
     padding: 1.2rem 2.8rem;
     border-radius: 0; }
-  .card .card-header {
+  .ascii-card .card-header {
     background: #495057; }
+
+.ascii-table-container {
+  display: flex; }
+
+.ascii-table thead tr {
+  background: #fff; }
+
+.ascii-table thead th {
+  border: none;
+  font-weight: 600; }
+
+.ascii-table tbody tr {
+  background: #fff; }
+  .ascii-table tbody tr:nth-of-type(odd) {
+    background: #fafafa; }
+  .ascii-table tbody tr:hover {
+    background: #42a5f5;
+    color: #fff; }
+
+.ascii-table th,
+.ascii-table td {
+  padding: .3rem 1rem; }
 
