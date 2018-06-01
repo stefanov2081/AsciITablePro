@@ -1,6 +1,17 @@
-﻿body {
-  background: #e0e0e0; }
-
-h1 {
+﻿h1 {
   color: #757575; }
+
+.wrapper {
+  background: linear-gradient(to bottom, #d0dee4, #fdfdfd);
+  width: 100%;
+  height: 100vh; }
+  .wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    background: linear-gradient(to bottom, #abc7d8, #657c70);
+    -webkit-mask-image: linear-gradient(to left, white, transparent); }
 
