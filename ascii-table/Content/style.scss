@@ -13,10 +13,11 @@ h1 {
 
 .main-content {
     max-width: 1540px;
+    position: relative;
     background: rgba($bg-white, .6);
     -moz-box-shadow: inherit;
     -webkit-box-shadow: inherit;
-    box-shadow: 3px 0 5px $shadow-color;
+    box-shadow: 0 3px 5px rgba($shadow-color, .35);
 }
 
 .navbar {
@@ -26,5 +27,24 @@ h1 {
     
     .nav-link {
         text-transform: uppercase;
+    }
+}
+
+.card {
+    margin: 0 -15px;
+    border: none;
+    background: none;
+
+    .card-header,
+    .card-body {
+        padding: 1.2rem 2.8rem;
+        border-radius: 0;
+    }
+
+    .card-header {
+        background: $bg-dark;
+    }
+
+    .card-body {
     }
 }
