@@ -10,6 +10,7 @@ namespace ascii_table
         {
             bundles.Add(new ScriptBundle("~/Scripts/script").Include(
                 "~/Scripts/char.js", 
+                "~/Scripts/control-char.js",
                 "~/Scripts/script.js"));
 
             bundles.Add(new StyleBundle("~/Content/style").Include(

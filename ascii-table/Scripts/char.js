@@ -1,25 +1,25 @@
 ﻿class Char {
-    constructor(char) {
-        this.char = char;
+    constructor(charCode) {
+        this.charCode = charCode;
     }
 
     get binary() {
-        return this.char.toString(2);
+        return this.charCode.toString(2);
     }
 
     get octaDecimal() {
-        return this.char.toString(8);
+        return this.charCode.toString(8);
     }
 
     get decimal() {
-        return this.char.toString(10);
+        return this.charCode;
     }
 
     get hexaDecimal() {
-        return this.char.toString(16);
+        return this.charCode.toString(16);
     }
 
     get glyph() {
-        return String.fromCharCode(this.char);
+        return String.fromCharCode(this.charCode);
     }
 }
