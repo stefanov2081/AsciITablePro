@@ -1,1 +1,26 @@
-﻿
+﻿@media (max-width: 991.98px) {
+    .ascii-nav {
+        .navbar-brand {
+            margin: auto;
+        }
+
+        .navbar-collapse {
+
+            .form-with-icon {
+                margin: 0.5rem 0;
+                padding: 0;
+                border-top: 1px solid rgba($text-color-muted, 0.3);
+                border-bottom: 1px solid rgba($text-color-muted, 0.3);
+
+                .form-control {
+                    padding: 1rem;
+                    width: calc(100% - 16px);
+                }
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+    }
+}

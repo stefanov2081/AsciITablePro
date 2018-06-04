@@ -1,21 +1,30 @@
 ﻿.ascii-nav {
     margin: 0 -15px;
     padding: 1.2rem 2.8rem;
-    background: $bg-light;
+    background: $color-light;
 
     .nav-link {
         font-weight: 600;
         text-transform: uppercase;
     }
 
-    a.navbar-brand {
-        margin-right: 2.8rem;
+    .navbar-brand,
+    .navbar-toggler .fas,
+    .nav-link {
         color: $text-color;
     }
 
-    .form-with-icon {
+    .nav-item {
+        &.active {
+            .nav-link {
+                color: $color-active;
+            }
+        }
+    }
+
+    .navbar-collapse {
         position: relative;
-        padding-left: 2rem;
+        margin: 0 0 0 1.8rem;
 
         &::before {
             content: '';
@@ -25,6 +34,10 @@
             bottom: -21px;
             border-left: 1px solid rgba($text-color-muted, 0.3);
         }
+    }
+
+    .form-with-icon {
+        padding-left: 2rem;
     }
 
     .form-control {

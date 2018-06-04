@@ -9,6 +9,8 @@ body {
     color: $text-color;
 }
 
+button,
+button:focus,
 .form-control,
 .form-control:focus {
     outline: none;
@@ -16,7 +18,12 @@ body {
 }
 
 .wrapper {
-    @include FourPointGradient(#d0dee4, #abc7d8, #fdfdfd, #657c70);
+    $top-left: #d0dee4;
+    $top-right: #abc7d8;
+    $bottom-left: #fdfdfd;
+    $bottom-right: #657c70;
+
+    @include FourPointGradient($top-left, $top-right, $bottom-left, $bottom-right);
     width: 100%;
     height: 100vh;
 }
@@ -24,7 +31,7 @@ body {
 .ascii-container {
     max-width: 1540px;
     position: relative;
-    background: rgba($bg-white, .6);
+    background: rgba($color-white, .6);
     -moz-box-shadow: inherit;
     -webkit-box-shadow: inherit;
     box-shadow: 0 3px 5px rgba($shadow-color, .35);
