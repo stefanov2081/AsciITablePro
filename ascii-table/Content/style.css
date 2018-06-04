@@ -40,6 +40,7 @@ button:focus,
 .ascii-container {
   max-width: 1540px;
   position: relative;
+  margin-bottom: 1rem;
   background: rgba(255, 255, 255, 0.6);
   -moz-box-shadow: inherit;
   -webkit-box-shadow: inherit;
