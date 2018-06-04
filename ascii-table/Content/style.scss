@@ -17,6 +17,14 @@ button:focus,
     box-shadow: none;
 }
 
+a {
+    color: $text-color;
+
+    &:hover {
+        color: $color-dark;
+    }
+}
+
 .wrapper {
     $top-left: #d0dee4;
     $top-right: #abc7d8;
