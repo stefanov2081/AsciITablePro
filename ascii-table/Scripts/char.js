@@ -3,6 +3,10 @@
         this.charCode = charCode;
     }
 
+    get asd() {
+        return this.glyph;
+    }
+
     get binary() {
         return this.charCode.toString(2);
     }
