@@ -15,7 +15,7 @@
         this.name = name;
     }
 
-    get asd() {
+    get char() {
         return this.name;
     }
 }
