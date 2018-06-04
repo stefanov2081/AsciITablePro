@@ -1,10 +1,7 @@
 ﻿class Char {
-    constructor(charCode) {
+    constructor(charCode, charType) {
         this.charCode = charCode;
-    }
-
-    get asd() {
-        return this.glyph;
+        this.charType = charType;
     }
 
     get binary() {
@@ -21,9 +18,5 @@
 
     get hexaDecimal() {
         return this.charCode.toString(16);
-    }
-
-    get glyph() {
-        return String.fromCharCode(this.charCode);
     }
 }

@@ -3,8 +3,8 @@
     //    super(charCode);
     //}
 
-    constructor(charCode, abbreviation63, abbreviation65, abbreviation67, b, caretNotation, cEscapeSequence, name) {
-        super(charCode);
+    constructor(charCode, charType, abbreviation63, abbreviation65, abbreviation67, b, caretNotation, cEscapeSequence, name) {
+        super(charCode, charType);
 
         this.abbreviation63 = abbreviation63;
         this.abbreviation65 = abbreviation65;
@@ -15,7 +15,7 @@
         this.name = name;
     }
 
-    get asd() {
+    get char() {
         return this.name;
     }
 }
