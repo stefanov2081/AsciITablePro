@@ -28,6 +28,16 @@ a {
   a:hover {
     color: #495057; }
 
+.popover {
+  background: #000; }
+  .popover .arrow {
+    left: calc(50% - 13px); }
+    .popover .arrow::after {
+      border-bottom-color: #000; }
+  .popover .popover-header,
+  .popover .popover-body {
+    color: #fff; }
+
 .wrapper {
   background: linear-gradient(to bottom, #d0dee4, #fdfdfd);
   width: 100%;
@@ -118,7 +128,7 @@ a {
 .card-header {
   overflow: hidden; }
 
-.ripple {
+.anim {
   width: 0;
   height: 0;
   border-radius: 50%;
@@ -127,10 +137,10 @@ a {
   position: absolute;
   opacity: 1; }
 
-.rippleEffect {
-  animation: rippleDrop .6s linear; }
+.animEffect {
+  animation: clickAnimation .6s linear; }
 
-@keyframes rippleDrop {
+@keyframes clickAnimation {
   100% {
     transform: scale(2);
     opacity: 0; } }
@@ -156,7 +166,7 @@ a {
       cursor: pointer; }
   .ascii-table th,
   .ascii-table td {
-    padding: .3rem 1rem; }
+    padding: .25rem .75rem; }
   .ascii-table.col + .col {
     margin: 0 0 0 .5rem; }
 

@@ -438,7 +438,7 @@
 
     $($asciiCharCodeCard).click(function (e) {
 
-        let $removeActiveAnimation = $(".ripple");
+        let $removeActiveAnimation = $(".anim");
 
         $removeActiveAnimation.remove();
 
@@ -447,7 +447,7 @@
         let posY = that.offset().top;
         let buttonWidth = that.width();
         let buttonHeight = that.height();
-        let animationElement = '<span class="ripple"></span>';
+        let animationElement = '<span class="anim"></span>';
 
         that.prepend(animationElement);
 
@@ -460,8 +460,8 @@
         let x = e.pageX - posX - buttonWidth / 2;
         let y = e.pageY - posY - buttonHeight / 2;
 
-        let $animationContainerClass = $(".ripple");
-        let animationClass = 'rippleEffect';
+        let $animationContainerClass = $(".anim");
+        let animationClass = 'animEffect';
         let dimensions = 'px';
 
         $animationContainerClass.css({
@@ -470,5 +470,34 @@
             top: y + dimensions,
             left: x + dimensions
         }).addClass(animationClass);
+
     });
+})();
+
+(function () {
+
+    // Instantiate ClipboardJS
+    new ClipboardJS('.ascii-char-code-card');
+
+    let $popoverElement = $('.ascii-char-code-card');
+
+    //Initialize Bootstrap Popover
+    let $popoverInit = $('[data-toggle="popover"]')
+
+    $popoverInit.popover();
+
+    $popoverElement.on('click', function () {
+
+        let that = $(this);
+
+        that.popover();
+
+        debugger;
+
+        setTimeout(function () {
+            that.popover('hide');
+        }, 1500);
+
+    })    
+
 })();

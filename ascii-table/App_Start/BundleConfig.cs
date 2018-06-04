@@ -8,6 +8,9 @@ namespace ascii_table
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/Scripts/third-party").Include(
+                "~/Scripts/clipboard.min.js"));
+
             bundles.Add(new ScriptBundle("~/Scripts/script").Include(
                 "~/Scripts/char.js", 
                 "~/Scripts/control-char.js",

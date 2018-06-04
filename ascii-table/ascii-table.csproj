@@ -162,6 +162,7 @@
     </Content>
     <Content Include="Scripts\char-type.js" />
     <Content Include="Scripts\char.js" />
+    <Content Include="Scripts\clipboard.min.js" />
     <Content Include="Scripts\control-char.js" />
     <Content Include="Scripts\printable-char.js" />
     <Content Include="Scripts\script.js" />
