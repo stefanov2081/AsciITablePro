@@ -2,13 +2,18 @@
   font-family: 'Work Sans', sans-serif;
   color: #757575; }
 
+.form-control,
+.form-control:focus {
+  outline: none;
+  box-shadow: none; }
+
 .wrapper {
   background: linear-gradient(to bottom, #d0dee4, #fdfdfd);
   width: 100%;
   height: 100vh; }
   .wrapper::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: inherit;
@@ -31,6 +36,22 @@
   .ascii-nav .nav-link {
     font-weight: 600;
     text-transform: uppercase; }
+  .ascii-nav a.navbar-brand {
+    margin-right: 2.8rem;
+    color: #757575; }
+  .ascii-nav .form-with-icon {
+    position: relative;
+    padding-left: 2rem; }
+    .ascii-nav .form-with-icon::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: -21px;
+      bottom: -21px;
+      border-left: 1px solid rgba(158, 158, 158, 0.3); }
+  .ascii-nav .form-control {
+    border: none;
+    background: none; }
 
 .ascii-card {
   margin: 0 -15px;

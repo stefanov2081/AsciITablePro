@@ -1,9 +1,18 @@
 ﻿@import "variables";
 @import "mixins";
+@import "breakpoints";
+
+//Resets and global styles
 
 body {
     font-family: 'Work Sans', sans-serif;
     color: $text-color;
+}
+
+.form-control,
+.form-control:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 .wrapper {
@@ -21,73 +30,6 @@ body {
     box-shadow: 0 3px 5px rgba($shadow-color, .35);
 }
 
-.ascii-nav {
-    margin: 0 -15px;
-    padding: 1.2rem 2.8rem;
-    background: $bg-light;
-    
-    .nav-link {
-        font-weight: 600;
-        text-transform: uppercase;
-    }
-}
-
-.ascii-card {
-    margin: 0 -15px;
-    border: none;
-    background: none;
-
-    .card-header,
-    .card-body {
-        padding: 1.2rem 2.8rem;
-        border-radius: 0;
-    }
-
-    .card-header {
-        background: $bg-dark;
-    }
-}
-
-.ascii-table-container {
-    display: flex;
-}
-
-.ascii-table {
-    margin: 0;
-    border: 1px solid $bg-white;
-
-    thead {
-        tr {
-            background: $bg-white;
-        }
-
-        th {
-            border: none;
-            font-weight: 600;
-        }
-    }
-
-    tbody {
-        tr {
-            background: $bg-white;
-
-            &:nth-of-type(odd) {
-                background: rgba($bg-white, .9);
-            }
-
-            &:hover {
-                background: $bg-active;
-                color: $bg-white;
-            }
-        }
-    }
-
-    th,
-    td {
-        padding: .3rem 1rem;
-    }
-
-    &.col + .col {
-        margin: 0 0 0 .5rem;
-    }
-}
+@import "navbar";
+@import "card";
+@import "table";

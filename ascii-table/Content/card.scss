@@ -1,0 +1,15 @@
+﻿.ascii-card {
+    margin: 0 -15px;
+    border: none;
+    background: none;
+
+    .card-header,
+    .card-body {
+        padding: 1.2rem 2.8rem;
+        border-radius: 0;
+    }
+
+    .card-header {
+        background: $bg-dark;
+    }
+}
