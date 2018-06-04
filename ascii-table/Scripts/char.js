@@ -1,6 +1,7 @@
 ﻿class Char {
-    constructor(charCode) {
+    constructor(charCode, charType) {
         this.charCode = charCode;
+        this.charType = charType;
     }
 
     get binary() {

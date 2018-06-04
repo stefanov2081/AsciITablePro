@@ -1,6 +1,6 @@
 ﻿class PrintableChar extends Char {
-    constructor(charCode, name) {
-        super(charCode);
+    constructor(charCode, charType, name) {
+        super(charCode, charType);
 
         this.name = name;
 

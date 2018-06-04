@@ -12,6 +12,7 @@ namespace ascii_table
                 "~/Scripts/char.js", 
                 "~/Scripts/control-char.js",
                 "~/Scripts/printable-char.js",
+                "~/Scripts/char-type.js",
                 "~/Scripts/script.js"));
 
             bundles.Add(new StyleBundle("~/Content/style").Include(
