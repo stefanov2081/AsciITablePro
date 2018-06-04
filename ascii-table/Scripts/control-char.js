@@ -14,4 +14,8 @@
         this.cEscapeSequence = cEscapeSequence;
         this.name = name;
     }
+
+    get asd() {
+        return this.name;
+    }
 }
