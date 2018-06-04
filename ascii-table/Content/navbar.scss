@@ -1,0 +1,47 @@
+﻿.ascii-nav {
+    margin: 0 -15px;
+    padding: 1.2rem 2.8rem;
+    background: $color-light;
+
+    .nav-link {
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .navbar-brand,
+    .navbar-toggler .fas,
+    .nav-link {
+        color: $text-color;
+    }
+
+    .nav-item {
+        &.active {
+            .nav-link {
+                color: $color-active;
+            }
+        }
+    }
+
+    .navbar-collapse {
+        position: relative;
+        margin: 0 0 0 1.8rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -21px;
+            bottom: -21px;
+            border-left: 1px solid rgba($text-color-muted, 0.3);
+        }
+    }
+
+    .form-with-icon {
+        padding-left: 2rem;
+    }
+
+    .form-control {
+        border: none;
+        background: none;
+    }
+}
