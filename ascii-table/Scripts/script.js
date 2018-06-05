@@ -475,9 +475,10 @@
 })();
 
 (function () {
+    
+})();
 
-    // Instantiate ClipboardJS
-    new ClipboardJS('.ascii-char-code-card');
+(function () {
 
     let $popoverElement = $('.ascii-char-code-card');
 
@@ -492,12 +493,10 @@
 
         that.popover();
 
-        debugger;
-
         setTimeout(function () {
             that.popover('hide');
         }, 1500);
 
-    })    
+    })
 
 })();
