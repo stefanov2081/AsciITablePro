@@ -160,6 +160,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\ascii-table-factory.js" />
+    <Content Include="Scripts\ascii-table-printer.js" />
     <Content Include="Scripts\char-type.js" />
     <Content Include="Scripts\char.js" />
     <Content Include="Scripts\control-char.js" />
