@@ -3,8 +3,8 @@
     var asciiTableRepository = new AsciiTableRepository();
 
     var asciiTablePrinter = new AcsiiTablePrinter();
-    asciiTablePrinter.printAsciiTable(asciiTableRepository.standartAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], 20);
-    asciiTablePrinter.printAsciiTable(asciiTableRepository.extendedAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], 20);
+    asciiTablePrinter.printAsciiTable(asciiTableRepository.standartAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], 32);
+    asciiTablePrinter.printAsciiTable(asciiTableRepository.extendedAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], 32);
 })();
 
 (function () {
@@ -50,15 +50,9 @@
 })();
 
 (function () {
-    
-})();
-
-(function () {
 
     let $popoverElement = $('.ascii-char-code-card');
-
-    //Initialize Bootstrap Popover
-    let $popoverInit = $('[data-toggle="popover"]')
+    let $popoverInit = $('[data-toggle="popover"]');
 
     $popoverInit.popover();
 
@@ -72,6 +66,6 @@
             that.popover('hide');
         }, 1500);
 
-    })
+    });
 
 })();
