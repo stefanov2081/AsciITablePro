@@ -157,10 +157,11 @@ a {
     border: none;
     font-weight: 600; }
   .ascii-table tbody tr {
-    background: #fff; }
-    .ascii-table tbody tr:nth-of-type(odd) {
-      background: rgba(255, 255, 255, 0.9); }
-    .ascii-table tbody tr:hover {
+    background: #fff;
+    /*&:nth-of-type(odd) {
+                background: rgba($color-white, .9);
+            }*/ }
+    .ascii-table tbody tr:hover td {
       background: #42a5f5;
       color: #fff;
       cursor: pointer; }
@@ -169,4 +170,31 @@ a {
     padding: .25rem .75rem; }
   .ascii-table.col + .col {
     margin: 0 0 0 .5rem; }
+
+.ascii-table-legend tbody .control-character {
+  background: rgba(255, 249, 196, 0.3); }
+
+.ascii-table-legend tbody .punctuation {
+  background: rgba(225, 245, 254, 0.3); }
+
+.ascii-table-legend tbody .numeric-digit {
+  background: rgba(237, 231, 246, 0.3); }
+
+.ascii-table-legend tbody .alphabetic-uppercase {
+  background: rgba(241, 248, 233, 0.3); }
+
+.ascii-table-legend tbody .alphabetic-lowercase {
+  background: rgba(220, 237, 200, 0.3); }
+
+.ascii-table-legend tbody .extended-punctuation {
+  background: rgba(224, 224, 224, 0.3); }
+
+.ascii-table-legend tbody .graphic-character {
+  background: rgba(255, 224, 178, 0.3); }
+
+.ascii-table-legend tbody .international {
+  background: rgba(255, 204, 188, 0.3); }
+
+.ascii-table-legend tbody .undefined {
+  background: rgba(215, 204, 200, 0.3); }
 
