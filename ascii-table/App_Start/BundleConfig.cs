@@ -13,7 +13,8 @@ namespace ascii_table
                 "~/Scripts/control-char.js",
                 "~/Scripts/printable-char.js",
                 "~/Scripts/char-type.js",
-                "~/Scripts/ascii-table-factory.js",
+                "~/Scripts/ascii-table-printer.js",
+                "~/Scripts/ascii-table-repository.js",
                 "~/Scripts/script.js"));
 
             bundles.Add(new StyleBundle("~/Content/style").Include(

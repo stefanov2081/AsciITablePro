@@ -1,38 +1,10 @@
 ﻿(function () {
-    var th;
-    var tr;
-    var td;
-    var asciiTable = [];
-    var controlChars = [];
-    var htmlTables = document.getElementsByTagName('table');
+    //var asciiTableRepository = new AsciiTableRepository(new AsciiTableFactory().constructAsciiTable);
+    var asciiTableRepository = new AsciiTableRepository();
 
-    var asciiTableFactory = new AsciiTableFactory();
-    asciiTable = asciiTableFactory.constructAsciiTable;
-
-    var numberOfRows = 20;
-
-    for (var i = 0; i < htmlTables.length; i++) {
-        var currentTable = htmlTables[i];
-
-        for (var j = numberOfRows * i; j < numberOfRows * i + numberOfRows; j++) {
-
-            if (j < 256) {
-                tr = document.createElement('tr');
-                tr.classList.add(asciiTable[j].charType);
-
-                td = document.createElement('td');
-                td.innerText = asciiTable[j].decimal;
-                tr.appendChild(td);
-
-                td = document.createElement('td');
-                td.innerText = asciiTable[j].char;
-                tr.appendChild(td);
-
-                var currentTableBody = currentTable.querySelector('tbody');
-                currentTableBody.appendChild(tr);
-            }
-        }
-    }
+    var asciiTablePrinter = new AcsiiTablePrinter();
+    asciiTablePrinter.printAsciiTable('main-container', asciiTableRepository.standartAsciiTable);
+    asciiTablePrinter.printAsciiTable('main-container', asciiTableRepository.extendedAsciiTable);
 })();
 
 (function () {
