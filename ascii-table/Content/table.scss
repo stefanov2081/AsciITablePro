@@ -21,11 +21,11 @@
         tr {
             background: $color-white;
 
-            &:nth-of-type(odd) {
+            /*&:nth-of-type(odd) {
                 background: rgba($color-white, .9);
-            }
+            }*/
 
-            &:hover {
+            &:hover td {
                 background: $color-active;
                 color: $color-white;
                 cursor: pointer;
@@ -40,5 +40,56 @@
 
     &.col + .col {
         margin: 0 0 0 .5rem;
+    }
+}
+
+.ascii-table-legend {
+    $control-char: #ffd180;
+    $punctuation-char: #e1f5fe;
+    $numeric-char: #ede7f6;
+    $alphabetic-upper: #f1f8e9;
+    $alphabetic-low: #dcedc8;
+    $extended-punct: #e0e0e0;
+    $graphic-char: #ffe0b2;
+    $international-char: #ffccbc;
+    $udefined: #d7ccc8;
+
+
+    tbody {
+        .control-character {
+            background: rgba($control-char, .3);
+        }
+
+        .punctuation {
+            background: rgba($punctuation-char, .3);
+        }
+
+        .numeric-digit {
+            background: rgba($numeric-char, .3);
+        }
+
+        .alphabetic-uppercase {
+            background: rgba($alphabetic-upper, .3);
+        }
+
+        .alphabetic-lowercase {
+            background: rgba($alphabetic-low, .3);
+        }
+
+        .extended-punctuation {
+            background: rgba($extended-punct, .3);
+        }
+
+        .graphic-character {
+            background: rgba($graphic-char, .3);
+        }
+
+        .international {
+            background: rgba($international-char, .3);
+        }
+
+        .undefined {
+            background: rgba($udefined, .3);
+        }
     }
 }
