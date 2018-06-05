@@ -3,8 +3,8 @@
     var asciiTableRepository = new AsciiTableRepository();
 
     var asciiTablePrinter = new AcsiiTablePrinter();
-    asciiTablePrinter.printAsciiTable('main-container', asciiTableRepository.standartAsciiTable);
-    asciiTablePrinter.printAsciiTable('main-container', asciiTableRepository.extendedAsciiTable);
+    asciiTablePrinter.printAsciiTable(asciiTableRepository.standartAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], 20);
+    asciiTablePrinter.printAsciiTable(asciiTableRepository.extendedAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], 20);
 })();
 
 (function () {
