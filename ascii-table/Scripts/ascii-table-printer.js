@@ -18,7 +18,7 @@ function createDetailsListItem(label, value) {
 
     let divLabel = document.createElement('div');
     divLabel.classList.add('ascii-char-label');
-    divLabel.innerText = label;
+    divLabel.innerText = label + ':';
 
     let divValue = document.createElement('div');
     divValue.classList.add('ascii-char-value');
