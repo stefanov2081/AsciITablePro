@@ -31,7 +31,7 @@
 
     .navbar-collapse {
         position: relative;
-        /*margin: 0 0 0 1.8rem;*/
+
         &::before {
             content: '';
             position: absolute;
@@ -61,6 +61,12 @@
 
     .dropdown {
         padding-right: 2rem;
+
+        .active {
+            color: $color-active;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
 
         .dropdown-toggle {
             color: $text-color;

@@ -7,6 +7,8 @@
     asciiTablePrinter.printAsciiTable(asciiTableRepository.extendedAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], 32);
 })();
 
+//Shiny CSS Effect On Click And Copy Function
+
 (function () {
 
     let $asciiCharCodeCard = $('.ascii-char-code-card');
@@ -49,6 +51,8 @@
     });
 })();
 
+//Copied On Click Popover Function
+
 (function () {
 
     let $popoverElement = $('.ascii-char-code-card');
@@ -66,6 +70,20 @@
             that.popover('hide');
         }, 1500);
 
+    });
+
+})();
+
+//Dropdown Option Select Text Change Function
+
+(function () {
+
+    let $dropdownOptionElement = $('.dropdown-item');
+    let $selectElement = $('#selected');
+    let classActive = 'active';
+
+    $dropdownOptionElement.click(function () {
+        $selectElement.text($(this).text()).addClass(classActive);
     });
 
 })();
