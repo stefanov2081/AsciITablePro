@@ -1,6 +1,9 @@
-﻿.ascii-card {
-    margin: 0 -15px;
+﻿.card {
     border: none;
+}
+
+.ascii-card {
+    margin: 0 -15px;
     background: none;
 
     .card-header,
@@ -11,6 +14,12 @@
 
     .card-header {
         background: $color-dark;
+    }
+
+    .card-sm {
+        .card-body {
+            padding: 0.6rem 1.4rem;
+        }
     }
 
     .list-inline {

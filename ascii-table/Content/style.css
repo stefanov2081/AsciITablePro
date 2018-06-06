@@ -130,9 +130,11 @@ a {
       bottom: -21px;
       border-left: 1px solid rgba(158, 158, 158, 0.3); }
 
+.card {
+  border: none; }
+
 .ascii-card {
   margin: 0 -15px;
-  border: none;
   background: none; }
   .ascii-card .card-header,
   .ascii-card .card-body {
@@ -140,6 +142,8 @@ a {
     border-radius: 0; }
   .ascii-card .card-header {
     background: #495057; }
+  .ascii-card .card-sm .card-body {
+    padding: 0.6rem 1.4rem; }
   .ascii-card .list-inline {
     margin: 0; }
   .ascii-card .ascii-char-code-card {
