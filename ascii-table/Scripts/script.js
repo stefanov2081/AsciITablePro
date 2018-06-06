@@ -2,6 +2,7 @@
     var asciiTableRepository = new AsciiTableRepository();
     var numberOfRows = 32;
 
+    displayCharacterDetails(asciiTableRepository.standartAsciiTable[0]);
     printAsciiTable(asciiTableRepository.standartAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], numberOfRows);
     printAsciiTable(asciiTableRepository.extendedAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], numberOfRows);
 
