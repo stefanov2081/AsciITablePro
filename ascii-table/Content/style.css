@@ -1,21 +1,34 @@
 ﻿@media (max-width: 991.98px) {
-  .ascii-nav .navbar-brand {
+  .ascii-container .ascii-nav .navbar-brand {
     margin: auto; }
-  .ascii-nav .navbar-collapse .form-with-icon {
-    margin: 0.5rem 0;
-    padding: 0;
+  .ascii-container .ascii-nav .navbar-nav {
+    margin: 0; }
+  .ascii-container .ascii-nav .navbar-collapse.show {
+    margin-left: 0; }
+  .ascii-container .ascii-nav .navbar-collapse .search-container {
+    margin: 1rem 0;
     border-top: 1px solid rgba(158, 158, 158, 0.3);
     border-bottom: 1px solid rgba(158, 158, 158, 0.3); }
-    .ascii-nav .navbar-collapse .form-with-icon .form-control {
-      padding: 1rem;
-      width: calc(100% - 16px); }
-  .ascii-nav .navbar-collapse::before {
+  .ascii-container .ascii-nav .navbar-collapse .form-with-icon {
+    width: calc(100% - 200px);
+    padding: 0;
+    border-right: 1px solid rgba(158, 158, 158, 0.3); }
+  .ascii-container .ascii-nav .navbar-collapse .form-control {
+    width: calc(100% - 16px);
+    padding: 1rem; }
+  .ascii-container .ascii-nav .navbar-collapse .dropdown {
+    margin: 0; }
+    .ascii-container .ascii-nav .navbar-collapse .dropdown::before {
+      display: none; }
+  .ascii-container .ascii-nav .navbar-collapse::before {
     display: none; } }
 
 body {
   font-family: 'Work Sans', sans-serif;
   color: #757575; }
 
+.btn,
+.btn:focus,
 button,
 button:focus,
 .form-control,
@@ -65,18 +78,20 @@ a {
   margin: 0 -15px;
   padding: 1.2rem 2.8rem;
   background: #fafafa; }
+  .ascii-nav .navbar-brand,
+  .ascii-nav .navbar-toggler .fas {
+    color: #757575; }
   .ascii-nav .nav-link {
     font-weight: 600;
     text-transform: uppercase; }
-  .ascii-nav .navbar-brand,
-  .ascii-nav .navbar-toggler .fas,
-  .ascii-nav .nav-link {
-    color: #757575; }
+  .ascii-nav .navbar-brand {
+    margin: 0 2.8rem 0 0; }
   .ascii-nav .nav-item.active .nav-link {
     color: #42a5f5; }
+  .ascii-nav .navbar-nav {
+    margin: 0 0 0 2.8rem; }
   .ascii-nav .navbar-collapse {
-    position: relative;
-    margin: 0 0 0 1.8rem; }
+    position: relative; }
     .ascii-nav .navbar-collapse::before {
       content: '';
       position: absolute;
@@ -84,15 +99,45 @@ a {
       top: -21px;
       bottom: -21px;
       border-left: 1px solid rgba(158, 158, 158, 0.3); }
+  .ascii-nav .search-container {
+    display: flex;
+    flex: 1;
+    align-items: center; }
   .ascii-nav .form-with-icon {
+    width: 100%;
     padding-left: 2rem; }
   .ascii-nav .form-control {
+    width: calc(100% - 16px);
     border: none;
     background: none; }
+  .ascii-nav .dropdown {
+    padding-right: 2rem; }
+    .ascii-nav .dropdown .active {
+      color: #42a5f5;
+      font-weight: 600;
+      text-transform: uppercase; }
+    .ascii-nav .dropdown .dropdown-toggle {
+      color: #757575; }
+      .ascii-nav .dropdown .dropdown-toggle::after {
+        display: none; }
+    .ascii-nav .dropdown .btn {
+      background-color: transparent; }
+    .ascii-nav .dropdown .dropdown-item:hover {
+      background: #42a5f5;
+      color: #fff; }
+    .ascii-nav .dropdown::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -21px;
+      bottom: -21px;
+      border-left: 1px solid rgba(158, 158, 158, 0.3); }
+
+.card {
+  border: none; }
 
 .ascii-card {
   margin: 0 -15px;
-  border: none;
   background: none; }
   .ascii-card .card-header,
   .ascii-card .card-body {
@@ -100,6 +145,8 @@ a {
     border-radius: 0; }
   .ascii-card .card-header {
     background: #495057; }
+  .ascii-card .card-sm .card-body {
+    padding: 0.6rem 1.4rem; }
   .ascii-card .list-inline {
     margin: 0; }
   .ascii-card .ascii-char-code-card {
@@ -109,9 +156,6 @@ a {
     flex-direction: row;
     overflow: hidden;
     user-select: none;
-    -moz-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.25, 1);
-    -o-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.25, 1);
-    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.5, 0.25, 1);
     transition: all 0.3s cubic-bezier(0.25, 0.5, 0.25, 1); }
     .ascii-card .ascii-char-code-card:hover {
       cursor: pointer;
@@ -157,10 +201,7 @@ a {
     border: none;
     font-weight: 600; }
   .ascii-table tbody tr {
-    background: #fff;
-    /*&:nth-of-type(odd) {
-                background: rgba($color-white, .9);
-            }*/ }
+    background: #fff; }
     .ascii-table tbody tr:hover td {
       background: #42a5f5;
       color: #fff;
@@ -173,33 +214,40 @@ a {
     white-space: nowrap;
     text-overflow: ellipsis; }
   .ascii-table.col + .col {
-    /*margin: 0 0 0 .5rem;*/
     border-left: 1px solid #dee2e6; }
 
-.ascii-table-legend tbody .control-character {
-  background: rgba(255, 255, 141, 0.5); }
+.ascii-table-legend .list-inline-item {
+  margin-bottom: 10px; }
 
-.ascii-table-legend tbody .punctuation {
+.ascii-table-legend .list-inline-item .fas {
+  margin: 0 5px 0 0;
+  line-height: .9rem;
+  box-shadow: 0px 0 0 1px #757575; }
+
+.ascii-table-legend .control-character .fas {
+  color: rgba(255, 255, 141, 0.5); }
+
+.ascii-table-legend .punctuation .fas {
   background: rgba(128, 216, 255, 0.5); }
 
-.ascii-table-legend tbody .numeric-digit {
-  background: rgba(179, 136, 255, 0.5); }
+.ascii-table-legend .numeric-digit .fas {
+  color: rgba(179, 136, 255, 0.5); }
 
-.ascii-table-legend tbody .alphabetic-uppercase {
-  background: rgba(204, 255, 144, 0.3); }
+.ascii-table-legend .alphabetic-uppercase .fas {
+  color: rgba(204, 255, 144, 0.3); }
 
-.ascii-table-legend tbody .alphabetic-lowercase {
-  background: rgba(198, 255, 0, 0.3); }
+.ascii-table-legend .alphabetic-lowercase .fas {
+  color: rgba(198, 255, 0, 0.3); }
 
-.ascii-table-legend tbody .extended-punctuation {
-  background: rgba(224, 224, 224, 0.3); }
+.ascii-table-legend .extended-punctuation .fas {
+  color: rgba(224, 224, 224, 0.3); }
 
-.ascii-table-legend tbody .graphic-character {
-  background: rgba(255, 209, 128, 0.3); }
+.ascii-table-legend .graphic-character .fas {
+  color: rgba(255, 209, 128, 0.3); }
 
-.ascii-table-legend tbody .international {
-  background: rgba(255, 158, 128, 0.3); }
+.ascii-table-legend .international .fas {
+  color: rgba(255, 158, 128, 0.3); }
 
-.ascii-table-legend tbody .undefined {
-  background: rgba(215, 204, 200, 0.3); }
+.ascii-table-legend .undefined .fas {
+  color: rgba(215, 204, 200, 0.3); }
 

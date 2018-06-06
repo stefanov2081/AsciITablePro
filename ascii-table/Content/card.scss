@@ -1,6 +1,9 @@
-﻿.ascii-card {
-    margin: 0 -15px;
+﻿.card {
     border: none;
+}
+
+.ascii-card {
+    margin: 0 -15px;
     background: none;
 
     .card-header,
@@ -11,6 +14,12 @@
 
     .card-header {
         background: $color-dark;
+    }
+
+    .card-sm {
+        .card-body {
+            padding: 0.6rem 1.4rem;
+        }
     }
 
     .list-inline {
@@ -24,9 +33,6 @@
         flex-direction: row;
         overflow: hidden;
         user-select: none;
-        -moz-transition: all 0.3s cubic-bezier(.25, .5, .25, 1);
-        -o-transition: all 0.3s cubic-bezier(.25, .5, .25, 1);
-        -webkit-transition: all 0.3s cubic-bezier(.25, .5, .25, 1);
         transition: all 0.3s cubic-bezier(.25, .5, .25, 1);
 
         &:hover {

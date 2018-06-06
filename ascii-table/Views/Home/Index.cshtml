@@ -12,14 +12,31 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form class="form-inline form-with-icon">
-                        <span class="form-icon">
-                            <i class="fas fa-search"></i>
-                        </span>
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    </form>
 
-                    <ul class="navbar-nav ml-auto">
+                    <div class="search-container">
+                        <form class="form-inline form-with-icon">
+                            <span class="form-icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        </form>
+
+                        <div class="dropdown ml-auto">
+                            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span id="selected">Search by...</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <a class="dropdown-item" href="#">Char</a>
+                                <a class="dropdown-item" href="#">Decimal</a>
+                                <a class="dropdown-item" href="#">Hex</a>
+                                <a class="dropdown-item" href="#">Binary</a>
+                                <a class="dropdown-item" href="#">HTML Code</a>
+                                <a class="dropdown-item" href="#">Escape Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="#">About</a>
                         </li>
@@ -105,13 +122,35 @@
                 </div>
 
                 <div class="card-body">
-                    <div class="row">
-                        <div id="ascii-table-container" class="col-md-9">
-                            <p class="card-title">Standard Characters</p>
 
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card card-sm mb-3">
+                                <div class="card-body">
+                                    <h6 class="list-inline-item font-weight-bold">Character Legend:</h6>
+
+                                    <ul class="list-inline ascii-table-legend">
+                                        <li class="list-inline-item control-character"><i class="fas fa-square"></i>Punctuation</li>
+                                        <li class="list-inline-item punctuation"><i class="fas fa-square"></i>Control</li>
+                                        <li class="list-inline-item numeric-digit"><i class="fas fa-square"></i>Numeric</li>
+                                        <li class="list-inline-item alphabetic-uppercase"><i class="fas fa-square"></i>Alphabetic uppercase</li>
+                                        <li class="list-inline-item alphabetic-lowercase"><i class="fas fa-square"></i>Alphabetic lowercase</li>
+                                        <li class="list-inline-item extended-punctuation"><i class="fas fa-square"></i>Extended punctuation</li>
+                                        <li class="list-inline-item graphic-character"><i class="fas fa-square"></i>Graphic</li>
+                                        <li class="list-inline-item international"><i class="fas fa-square"></i>International</li>
+                                        <li class="list-inline-item undefined"><i class="fas fa-square"></i>Undefined</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div id="ascii-table-container" class="col-12">
+                            @*<p class="card-title">Standard Characters</p>*@
                         </div>
 
-                        <div class="col-md-3">
+                        @*<div class="col-md-3">
                             <table class="table ascii-table ascii-table-legend col">
                                 <thead>
                                     <tr>
@@ -166,7 +205,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
             </div>

@@ -9,6 +9,8 @@ body {
     color: $text-color;
 }
 
+.btn,
+.btn:focus,
 button,
 button:focus,
 .form-control,
@@ -66,3 +68,61 @@ a {
 @import "navbar";
 @import "card";
 @import "table";
+
+.ascii-table-legend {
+    $control-char: #ffff8d;
+    $punctuation-char: #80d8ff;
+    $numeric-char: #b388ff;
+    $alphabetic-upper: #ccff90;
+    $alphabetic-low: #c6ff00;
+    $extended-punct: #e0e0e0;
+    $graphic-char: #ffd180;
+    $international-char: #ff9e80;
+    $udefined: #d7ccc8;
+
+    .list-inline-item {
+        margin-bottom: 10px;
+    }
+
+    .list-inline-item .fas {
+        margin: 0 5px 0 0;
+        line-height: .9rem;
+        box-shadow: 0px 0 0 1px $shadow-color;
+    }
+
+    .control-character .fas {
+        color: rgba($control-char, .5);
+    }
+
+    .punctuation .fas {
+        background: rgba($punctuation-char, .5);
+    }
+
+    .numeric-digit .fas {
+        color: rgba($numeric-char, .5);
+    }
+
+    .alphabetic-uppercase .fas {
+        color: rgba($alphabetic-upper, .3);
+    }
+
+    .alphabetic-lowercase .fas {
+        color: rgba($alphabetic-low, .3);
+    }
+
+    .extended-punctuation .fas {
+        color: rgba($extended-punct, .3);
+    }
+
+    .graphic-character .fas {
+        color: rgba($graphic-char, .3);
+    }
+
+    .international .fas {
+        color: rgba($international-char, .3);
+    }
+
+    .undefined .fas {
+        color: rgba($udefined, .3);
+    }
+}
