@@ -1,7 +1,98 @@
-﻿function createAsciiTableContainer(tagName, classList) {
-    var asciiTableContainer = document.createElement(tagName);
+﻿function createDetailsList() {
+    var ul = document.createElement('ul');
+    ul.classList.add('list-inline');
 
-    for (var i = 0; i < classList.length; i++) {
+    return ul;
+}
+
+function createDetailsListItem(label, value) {
+    let li = document.createElement('li');
+    li.classList.add('list-inline-item');
+
+    let divContainer = document.createElement('div');
+    divContainer.classList.add('card');
+    divContainer.classList.add('ascii-char-code-card');
+    divContainer.setAttribute('data-toggle', 'popover');
+    divContainer.setAttribute('data-placement', 'bottom');
+    divContainer.setAttribute('data-content', 'Copied!');
+
+    let divLabel = document.createElement('div');
+    divLabel.classList.add('ascii-char-label');
+    divLabel.innerText = label;
+
+    let divValue = document.createElement('div');
+    divValue.classList.add('ascii-char-value');
+    divValue.innerText = value;
+
+    let divIcon = document.createElement('div');
+    divIcon.classList.add('ascii-char-icon');
+
+    let i = document.createElement('i');
+    i.classList.add('far');
+    i.classList.add('fa-clipboard');
+
+    divIcon.appendChild(i);
+
+    divContainer.appendChild(divLabel);
+    divContainer.appendChild(divValue);
+    divContainer.appendChild(divIcon);
+    li.appendChild(divContainer);
+
+    return li;
+}
+
+function deleteAllChildren(element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
+
+function createDetailsHeader(char) {
+    console.log(char);
+
+    var h5 = document.createElement('h5');
+    h5.innerText = 'Character: ';
+
+    var span1 = document.createElement('span');
+    span1.classList.add('font-weight-bold');
+    if (char.abbreviation) {
+        span1.innerText = char.abbreviation + ' ';
+    } else {
+        span1.innerText = char.glyph + ' ';
+    }
+
+    h5.appendChild(span1);
+
+    if (char.description) {
+        var span2 = document.createElement('span');
+        span2.innerText = char.description;
+        h5.appendChild(span2);
+    }
+
+    return h5;
+}
+
+function displayCharacterDetails(char) {
+    let charDetailsContainer = document.getElementById('ascii-details-container');
+    deleteAllChildren(charDetailsContainer);
+
+    let charDetailsHeader = createDetailsHeader(char);
+    charDetailsContainer.appendChild(charDetailsHeader);
+
+    let charDetailsList = createDetailsList();
+    charDetailsContainer.appendChild(charDetailsList);
+
+    for (let propertyKey in char) {
+        if (propertyKey !== 'charType')
+        charDetailsList.appendChild(
+            createDetailsListItem(propertyKey, char[propertyKey]));
+    }
+}
+
+function createAsciiTableContainer(tagName, classList) {
+    let asciiTableContainer = document.createElement(tagName);
+
+    for (let i = 0; i < classList.length; i++) {
         asciiTableContainer.classList.add(classList[i])
     }
 
@@ -9,14 +100,14 @@
 }
 
 function createHtmlTables(asciiTableArray, numberOfRows, classList, asciiTableContainer) {
-    var th;
-    var tr;
-    var td;
-    var thead;
-    var tbody;
-    var htmlTables = [];
+    let th;
+    let tr;
+    let td;
+    let thead;
+    let tbody;
+    let htmlTables = [];
 
-    for (var i = 0; i < asciiTableArray.length / numberOfRows; i++) {
+    for (let i = 0; i < asciiTableArray.length / numberOfRows; i++) {
         thead = document.createElement('thead');
         tr = document.createElement('tr');
 
@@ -35,7 +126,7 @@ function createHtmlTables(asciiTableArray, numberOfRows, classList, asciiTableCo
 
         htmlTables[i] = document.createElement('table');
 
-        for (var j = 0; j < classList.length; j++) {
+        for (let j = 0; j < classList.length; j++) {
             htmlTables[i].classList.add(classList[j]);
         }
 
@@ -48,13 +139,15 @@ function createHtmlTables(asciiTableArray, numberOfRows, classList, asciiTableCo
 }
 
 function populateHtmlTables(htmlTables, numberOfRows, asciiTableArray) {
-    for (var i = 0; i < htmlTables.length; i++) {
-        var currentTable = htmlTables[i];
+    for (let i = 0; i < htmlTables.length; i++) {
+        let currentTable = htmlTables[i];
 
-        for (var j = numberOfRows * i; j < numberOfRows * i + numberOfRows; j++) {
+        for (let j = numberOfRows * i; j < numberOfRows * i + numberOfRows; j++) {
 
             if (j < asciiTableArray.length) {
                 tr = document.createElement('tr');
+
+                tr.onclick = function () { displayCharacterDetails(asciiTableArray[j]); };
 
                 tr.classList.add(asciiTableArray[j].charType);
 
@@ -63,22 +156,30 @@ function populateHtmlTables(htmlTables, numberOfRows, asciiTableArray) {
                 tr.appendChild(td);
 
                 td = document.createElement('td');
-                td.innerText = asciiTableArray[j].char;
+                td.innerText = asciiTableArray[j].glyph;
                 tr.appendChild(td);
 
-                var currentTableBody = currentTable.querySelector('tbody');
+                let currentTableBody = currentTable.querySelector('tbody');
                 currentTableBody.appendChild(tr);
             }
         }
     }
 }
 
-class AcsiiTablePrinter {
-    printAsciiTable(asciiTableArray, containerId, header, classList, numberOfRows) {
-        var mainContainer = document.getElementById(containerId);
-        var asciiTableContainer = createAsciiTableContainer('div', ['ascii-table-container']);
-        var htmlTables = createHtmlTables(asciiTableArray, numberOfRows, classList, asciiTableContainer);
-        populateHtmlTables(htmlTables, numberOfRows, asciiTableArray)
-        mainContainer.appendChild(asciiTableContainer);
-    }
+function printAsciiTable(asciiTableArray, containerId, header, classList, numberOfRows) {
+    let mainContainer = document.getElementById(containerId);
+    let asciiTableContainer = createAsciiTableContainer('div', ['ascii-table-container']);
+    let htmlTables = createHtmlTables(asciiTableArray, numberOfRows, classList, asciiTableContainer);
+    populateHtmlTables(htmlTables, numberOfRows, asciiTableArray)
+    mainContainer.appendChild(asciiTableContainer);
 }
+
+//class AcsiiTablePrinter {
+//    printAsciiTable(asciiTableArray, containerId, header, classList, numberOfRows) {
+//        let mainContainer = document.getElementById(containerId);
+//        let asciiTableContainer = createAsciiTableContainer('div', ['ascii-table-container']);
+//        let htmlTables = createHtmlTables(asciiTableArray, numberOfRows, classList, asciiTableContainer);
+//        populateHtmlTables(htmlTables, numberOfRows, asciiTableArray)
+//        mainContainer.appendChild(asciiTableContainer);
+//    }
+//}

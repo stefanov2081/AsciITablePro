@@ -1,10 +1,12 @@
 ﻿(function () {
-    //var asciiTableRepository = new AsciiTableRepository(new AsciiTableFactory().constructAsciiTable);
     var asciiTableRepository = new AsciiTableRepository();
+    var numberOfRows = 32;
 
-    var asciiTablePrinter = new AcsiiTablePrinter();
-    asciiTablePrinter.printAsciiTable(asciiTableRepository.standartAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], 32);
-    asciiTablePrinter.printAsciiTable(asciiTableRepository.extendedAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], 32);
+    printAsciiTable(asciiTableRepository.standartAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], numberOfRows);
+    printAsciiTable(asciiTableRepository.extendedAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], numberOfRows);
+
+
+    var asciiTableContainer = document.getElementsByTagName('table');
 })();
 
 (function () {

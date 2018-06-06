@@ -10,8 +10,8 @@ namespace ascii_table
         {
             bundles.Add(new ScriptBundle("~/Scripts/script").Include(
                 "~/Scripts/char.js",
-                "~/Scripts/control-char.js",
                 "~/Scripts/printable-char.js",
+                "~/Scripts/control-char.js",
                 "~/Scripts/char-type.js",
                 "~/Scripts/ascii-table-printer.js",
                 "~/Scripts/ascii-table-repository.js",
