@@ -12,14 +12,31 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form class="form-inline form-with-icon">
-                        <span class="form-icon">
-                            <i class="fas fa-search"></i>
-                        </span>
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                    </form>
 
-                    <ul class="navbar-nav ml-auto">
+                    <div class="search-container">
+                        <form class="form-inline form-with-icon">
+                            <span class="form-icon">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        </form>
+
+                        <div class="dropdown ml-auto">
+                            <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Search by...
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                <a class="dropdown-item" href="#">Char</a>
+                                <a class="dropdown-item" href="#">Decimal</a>
+                                <a class="dropdown-item" href="#">Hex</a>
+                                <a class="dropdown-item" href="#">Binary</a>
+                                <a class="dropdown-item" href="#">HTML Code</a>
+                                <a class="dropdown-item" href="#">Escape Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="#">About</a>
                         </li>
