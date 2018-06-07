@@ -69,7 +69,8 @@ a {
 @import "card";
 @import "table";
 
-.ascii-table-legend {
+.ascii-table-legend,
+.ascii-table {
     $control-char: #ffff8d;
     $punctuation-char: #80d8ff;
     $numeric-char: #b388ff;
@@ -91,15 +92,15 @@ a {
     }
 
     .control-character .fas {
-        color: rgba($control-char, .5);
+        color: rgba($control-char, .3);
     }
 
     .punctuation .fas {
-        background: rgba($punctuation-char, .5);
+        color: rgba($punctuation-char, .3);
     }
 
     .numeric-digit .fas {
-        color: rgba($numeric-char, .5);
+        color: rgba($numeric-char, .3);
     }
 
     .alphabetic-uppercase .fas {
@@ -124,5 +125,43 @@ a {
 
     .undefined .fas {
         color: rgba($udefined, .3);
+    }
+
+    tbody {
+        .control-character {
+            background: rgba($control-char, .3);
+        }
+
+        .punctuation {
+            background: rgba($punctuation-char, .3);
+        }
+
+        .numeric-digit {
+            background: rgba($numeric-char, .3);
+        }
+
+        .alphabetic-uppercase {
+            background: rgba($alphabetic-upper, .3);
+        }
+
+        .alphabetic-lowercase {
+            background: rgba($alphabetic-low, .3);
+        }
+
+        .extended-punctuation {
+            background: rgba($extended-punct, .3);
+        }
+
+        .graphic-character {
+            background: rgba($graphic-char, .3);
+        }
+
+        .international {
+            background: rgba($international-char, .3);
+        }
+
+        .undefined {
+            background: rgba($udefined, .3);
+        }
     }
 }

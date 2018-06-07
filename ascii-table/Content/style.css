@@ -194,7 +194,7 @@ a {
 
 .ascii-table {
   margin: 0;
-  border: 1px solid #fff; }
+  /*border: 1px solid $color-white;*/ }
   .ascii-table thead tr {
     background: #fff; }
   .ascii-table thead th {
@@ -216,38 +216,85 @@ a {
   .ascii-table.col + .col {
     border-left: 1px solid #dee2e6; }
 
-.ascii-table-legend .list-inline-item {
+.ascii-table-legend .list-inline-item,
+.ascii-table .list-inline-item {
   margin-bottom: 10px; }
 
-.ascii-table-legend .list-inline-item .fas {
+.ascii-table-legend .list-inline-item .fas,
+.ascii-table .list-inline-item .fas {
   margin: 0 5px 0 0;
   line-height: .9rem;
   box-shadow: 0px 0 0 1px #757575; }
 
-.ascii-table-legend .control-character .fas {
-  color: rgba(255, 255, 141, 0.5); }
+.ascii-table-legend .control-character .fas,
+.ascii-table .control-character .fas {
+  color: rgba(255, 255, 141, 0.3); }
 
-.ascii-table-legend .punctuation .fas {
-  background: rgba(128, 216, 255, 0.5); }
+.ascii-table-legend .punctuation .fas,
+.ascii-table .punctuation .fas {
+  color: rgba(128, 216, 255, 0.3); }
 
-.ascii-table-legend .numeric-digit .fas {
-  color: rgba(179, 136, 255, 0.5); }
+.ascii-table-legend .numeric-digit .fas,
+.ascii-table .numeric-digit .fas {
+  color: rgba(179, 136, 255, 0.3); }
 
-.ascii-table-legend .alphabetic-uppercase .fas {
+.ascii-table-legend .alphabetic-uppercase .fas,
+.ascii-table .alphabetic-uppercase .fas {
   color: rgba(204, 255, 144, 0.3); }
 
-.ascii-table-legend .alphabetic-lowercase .fas {
+.ascii-table-legend .alphabetic-lowercase .fas,
+.ascii-table .alphabetic-lowercase .fas {
   color: rgba(198, 255, 0, 0.3); }
 
-.ascii-table-legend .extended-punctuation .fas {
+.ascii-table-legend .extended-punctuation .fas,
+.ascii-table .extended-punctuation .fas {
   color: rgba(224, 224, 224, 0.3); }
 
-.ascii-table-legend .graphic-character .fas {
+.ascii-table-legend .graphic-character .fas,
+.ascii-table .graphic-character .fas {
   color: rgba(255, 209, 128, 0.3); }
 
-.ascii-table-legend .international .fas {
+.ascii-table-legend .international .fas,
+.ascii-table .international .fas {
   color: rgba(255, 158, 128, 0.3); }
 
-.ascii-table-legend .undefined .fas {
+.ascii-table-legend .undefined .fas,
+.ascii-table .undefined .fas {
   color: rgba(215, 204, 200, 0.3); }
+
+.ascii-table-legend tbody .control-character,
+.ascii-table tbody .control-character {
+  background: rgba(255, 255, 141, 0.3); }
+
+.ascii-table-legend tbody .punctuation,
+.ascii-table tbody .punctuation {
+  background: rgba(128, 216, 255, 0.3); }
+
+.ascii-table-legend tbody .numeric-digit,
+.ascii-table tbody .numeric-digit {
+  background: rgba(179, 136, 255, 0.3); }
+
+.ascii-table-legend tbody .alphabetic-uppercase,
+.ascii-table tbody .alphabetic-uppercase {
+  background: rgba(204, 255, 144, 0.3); }
+
+.ascii-table-legend tbody .alphabetic-lowercase,
+.ascii-table tbody .alphabetic-lowercase {
+  background: rgba(198, 255, 0, 0.3); }
+
+.ascii-table-legend tbody .extended-punctuation,
+.ascii-table tbody .extended-punctuation {
+  background: rgba(224, 224, 224, 0.3); }
+
+.ascii-table-legend tbody .graphic-character,
+.ascii-table tbody .graphic-character {
+  background: rgba(255, 209, 128, 0.3); }
+
+.ascii-table-legend tbody .international,
+.ascii-table tbody .international {
+  background: rgba(255, 158, 128, 0.3); }
+
+.ascii-table-legend tbody .undefined,
+.ascii-table tbody .undefined {
+  background: rgba(215, 204, 200, 0.3); }
 
