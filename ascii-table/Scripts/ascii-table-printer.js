@@ -1,38 +1,21 @@
-﻿function createDetailsList() {
-    let ul = document.createElement('ul');
-    ul.classList.add('list-inline');
+﻿function createDetailsListItem(label, value) {
+    let li = createElement('li', ['list-inline-item']);
 
-    return ul;
-}
-
-function createDetailsListItem(label, value) {
-    let li = document.createElement('li');
-    li.classList.add('list-inline-item');
-
-    let divContainer = document.createElement('div');
-    divContainer.classList.add('card');
-    divContainer.classList.add('ascii-char-code-card');
+    let divContainer = createElement('div', ['card', 'ascii-char-code-card']);
     divContainer.setAttribute('data-toggle', 'popover');
     divContainer.setAttribute('data-placement', 'bottom');
     divContainer.setAttribute('data-content', 'Copied!');
 
-    let divLabel = document.createElement('div');
-    divLabel.classList.add('ascii-char-label');
+    let divLabel = createElement('div', ['ascii-char-label']);
     divLabel.innerText = label + ':';
 
-    let divValue = document.createElement('div');
-    divValue.classList.add('ascii-char-value');
+    let divValue = createElement('div', ['ascii-char-value']);
     divValue.innerText = value;
 
-    let divIcon = document.createElement('div');
-    divIcon.classList.add('ascii-char-icon');
-
-    let i = document.createElement('i');
-    i.classList.add('far');
-    i.classList.add('fa-clipboard');
+    let divIcon = createElement('div', ['ascii-char-icon']);
+    let i = createElement('i', ['far', 'fa-clipboard']);
 
     divIcon.appendChild(i);
-
     divContainer.appendChild(divLabel);
     divContainer.appendChild(divValue);
     divContainer.appendChild(divIcon);
@@ -42,13 +25,11 @@ function createDetailsListItem(label, value) {
 }
 
 function createDetailsHeader(char) {
-    console.log(char);
-
-    var h5 = document.createElement('h5');
+    var h5 = createElement('h5');
     h5.innerText = 'Character: ';
 
-    var span1 = document.createElement('span');
-    span1.classList.add('font-weight-bold');
+    var span1 = createElement('span', ['font-weight-bold']);
+    
     if (char.abbreviation) {
         span1.innerText = char.abbreviation + ' ';
     } else {
@@ -58,7 +39,7 @@ function createDetailsHeader(char) {
     h5.appendChild(span1);
 
     if (char.description) {
-        var span2 = document.createElement('span');
+        var span2 = createElement('span');
         span2.innerText = char.description;
         h5.appendChild(span2);
     }
@@ -73,7 +54,7 @@ function displayCharacterDetails(char) {
     let charDetailsHeader = createDetailsHeader(char);
     charDetailsContainer.appendChild(charDetailsHeader);
 
-    let charDetailsList = createDetailsList();
+    let charDetailsList = createElement('ul', ['list-inline']);
     charDetailsContainer.appendChild(charDetailsList);
 
     for (let propertyKey in char) {
@@ -86,16 +67,6 @@ function displayCharacterDetails(char) {
     showCopiedPopover();
 }
 
-function createAsciiTableContainer(tagName, classList) {
-    let asciiTableContainer = document.createElement(tagName);
-
-    for (let i = 0; i < classList.length; i++) {
-        asciiTableContainer.classList.add(classList[i])
-    }
-
-    return asciiTableContainer;
-}
-
 function createHtmlTables(asciiTableArray, numberOfRows, classList, asciiTableContainer) {
     let th;
     let tr;
@@ -105,27 +76,23 @@ function createHtmlTables(asciiTableArray, numberOfRows, classList, asciiTableCo
     let htmlTables = [];
 
     for (let i = 0; i < asciiTableArray.length / numberOfRows; i++) {
-        thead = document.createElement('thead');
-        tr = document.createElement('tr');
+        thead = createElement('thead');
+        tr = createElement('tr');
 
-        th = document.createElement('th');
+        th = createElement('th');
         th.innerText = 'DEC';
         tr.appendChild(th);
 
-        th = document.createElement('th');
+        th = createElement('th');
         th.innerText = 'CHAR';
         tr.appendChild(th);
 
-        thead = document.createElement('thead');
+        thead = createElement('thead');
         thead.appendChild(tr);
 
-        tbody = document.createElement('tbody');
+        tbody = createElement('tbody');
 
-        htmlTables[i] = document.createElement('table');
-
-        for (let j = 0; j < classList.length; j++) {
-            htmlTables[i].classList.add(classList[j]);
-        }
+        htmlTables[i] = createElement('table', classList);
 
         htmlTables[i].appendChild(thead);
         htmlTables[i].appendChild(tbody);
@@ -142,11 +109,9 @@ function populateHtmlTables(htmlTables, numberOfRows, asciiTableArray) {
         for (let j = numberOfRows * i; j < numberOfRows * i + numberOfRows; j++) {
 
             if (j < asciiTableArray.length) {
-                tr = document.createElement('tr');
+                tr = createElement('tr', [asciiTableArray[j].charType]);
 
                 tr.onclick = function () { displayCharacterDetails(asciiTableArray[j]); };
-
-                tr.classList.add(asciiTableArray[j].charType);
 
                 td = document.createElement('td');
                 td.innerText = asciiTableArray[j].decimal;
@@ -165,7 +130,7 @@ function populateHtmlTables(htmlTables, numberOfRows, asciiTableArray) {
 
 function printAsciiTable(asciiTableArray, containerId, header, classList, numberOfRows) {
     let mainContainer = document.getElementById(containerId);
-    let asciiTableContainer = createAsciiTableContainer('div', ['ascii-table-container']);
+    let asciiTableContainer = createElement('div', ['ascii-table-container']);
     let htmlTables = createHtmlTables(asciiTableArray, numberOfRows, classList, asciiTableContainer);
     populateHtmlTables(htmlTables, numberOfRows, asciiTableArray)
     mainContainer.appendChild(asciiTableContainer);
