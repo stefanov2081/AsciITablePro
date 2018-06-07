@@ -163,7 +163,9 @@
     <Content Include="Scripts\ascii-table-printer.js" />
     <Content Include="Scripts\ascii-table-repository.js" />
     <Content Include="Scripts\char-type.js" />
+    <Content Include="Scripts\common.js" />
     <Content Include="Scripts\control-char.js" />
+    <Content Include="Scripts\copy-to-clipboard.js" />
     <Content Include="Scripts\printable-char.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Web.config" />

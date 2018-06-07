@@ -1,12 +1,13 @@
 ﻿(function () {
+    let numberOfRows = 32;
+    let asciiTableContainerId = 'ascii-table-container';
     var asciiTableRepository = new AsciiTableRepository();
-    var numberOfRows = 32;
 
     displayCharacterDetails(asciiTableRepository.standartAsciiTable[0]);
-    printAsciiTable(asciiTableRepository.standartAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], numberOfRows);
-    printAsciiTable(asciiTableRepository.extendedAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], numberOfRows);
+    printAsciiTable(asciiTableRepository.standartAsciiTable, asciiTableContainerId, null, ['table', 'ascii-table', 'col'], numberOfRows);
+    printAsciiTable(asciiTableRepository.extendedAsciiTable, asciiTableContainerId, null, ['table', 'ascii-table', 'col'], numberOfRows);
 
-    addOnKeyUpEventOnSearchInput(asciiTableRepository, 'ascii-table-container', numberOfRows);
+    addOnKeyUpEventOnSearchInput(asciiTableRepository, asciiTableContainerId, numberOfRows);
 })();
 
 //Shiny CSS Effect On Click And Copy Function

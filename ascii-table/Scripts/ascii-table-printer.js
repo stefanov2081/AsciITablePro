@@ -1,10 +1,4 @@
-﻿function deleteAllChildren(element) {
-    while (element.firstChild) {
-        element.removeChild(element.firstChild);
-    }
-}
-
-function createDetailsList() {
+﻿function createDetailsList() {
     var ul = document.createElement('ul');
     ul.classList.add('list-inline');
 
@@ -203,9 +197,6 @@ function addOnKeyUpEventOnSearchInput(asciiTableRepository, containerId, numberO
         }
 
         let result = [];
-        //console.log(searchKey);
-        //console.log(keyDictionary[searchKey.children[0].innerText]);
-        //console.log(searchKey.children[0].innerText);
 
         if (this.value && this.value && this.value.trim() != '') {
             for (var i = 0; i < asciiTableRepository.asciiTable.length; i++) {
@@ -222,59 +213,4 @@ function addOnKeyUpEventOnSearchInput(asciiTableRepository, containerId, numberO
 
         return result;
     };
-}
-
-//class AcsiiTablePrinter {
-//    printAsciiTable(asciiTableArray, containerId, header, classList, numberOfRows) {
-//        let mainContainer = document.getElementById(containerId);
-//        let asciiTableContainer = createAsciiTableContainer('div', ['ascii-table-container']);
-//        let htmlTables = createHtmlTables(asciiTableArray, numberOfRows, classList, asciiTableContainer);
-//        populateHtmlTables(htmlTables, numberOfRows, asciiTableArray)
-//        mainContainer.appendChild(asciiTableContainer);
-//    }
-//}
-
-//Copy To Clipboard Function
-
-function clipboardCopy() {
-
-    let $asciiCardElement = $('.ascii-char-code-card');
-    let asciiCharValueElement = '.ascii-char-value';
-
-    $asciiCardElement.on('click', function () {
-
-        let asciiCharValueElementText = $(this).children(asciiCharValueElement).text();
-        let hiddenInputElement = document.createElement("input");
-
-        hiddenInputElement.setAttribute('value', asciiCharValueElementText);
-
-        document.body.appendChild(hiddenInputElement);
-
-        hiddenInputElement.select();
-
-        document.execCommand('copy');
-
-        hiddenInputElement.remove();
-
-    });
-}
-
-//Copied On Click Popover Function
-
-function showCopiedPopover() {
-    let $popoverElement = $('.ascii-char-code-card');
-    let $popoverInit = $('[data-toggle="popover"]');
-
-    $popoverInit.popover();
-
-    $popoverElement.on('click', function () {
-
-        let that = $(this);
-
-        that.popover();
-
-        setTimeout(function () {
-            that.popover('hide');
-        }, 1500);
-    });
 }

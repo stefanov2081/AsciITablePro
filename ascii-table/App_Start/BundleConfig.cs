@@ -9,10 +9,11 @@ namespace ascii_table
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Scripts/script").Include(
-                "~/Scripts/char.js",
+                "~/Scripts/common.js",
                 "~/Scripts/printable-char.js",
                 "~/Scripts/control-char.js",
                 "~/Scripts/char-type.js",
+                "~/Scripts/copy-to-clipboard.js",
                 "~/Scripts/ascii-table-printer.js",
                 "~/Scripts/ascii-table-repository.js",
                 "~/Scripts/script.js"));
