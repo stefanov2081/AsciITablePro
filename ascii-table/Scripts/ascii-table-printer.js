@@ -38,6 +38,9 @@ function createDetailsListItem(label, value) {
     divContainer.appendChild(divIcon);
     li.appendChild(divContainer);
 
+    clipboardCopy();
+    showCopiedPopover();
+
     return li;
 }
 
@@ -84,8 +87,8 @@ function displayCharacterDetails(char) {
 
     for (let propertyKey in char) {
         if (propertyKey !== 'charType')
-        charDetailsList.appendChild(
-            createDetailsListItem(propertyKey, char[propertyKey]));
+            charDetailsList.appendChild(
+                createDetailsListItem(propertyKey, char[propertyKey]));
     }
 }
 
@@ -230,3 +233,51 @@ function addOnKeyUpEventOnSearchInput(asciiTableRepository, containerId, numberO
 //        mainContainer.appendChild(asciiTableContainer);
 //    }
 //}
+
+//Copy To Clipboard Function
+
+function clipboardCopy() {
+
+    let $asciiCardElement = $('.ascii-char-code-card');
+    let asciiCharValueElement = '.ascii-char-value';
+
+    $asciiCardElement.on('click', function () {
+
+        let asciiCharValueElementText = $(this).children(asciiCharValueElement).text();
+        let hiddenInputElement = document.createElement("input");
+
+        hiddenInputElement.setAttribute('value', asciiCharValueElementText);
+
+        document.body.appendChild(hiddenInputElement);
+
+        hiddenInputElement.select();
+
+        document.execCommand('copy');
+
+        hiddenInputElement.remove();
+
+    });
+}
+
+//Copied On Click Popover Function
+
+function showCopiedPopover() {
+
+    let $popoverElement = $('.ascii-char-code-card');
+    let $popoverInit = $('[data-toggle="popover"]');
+
+    $popoverInit.popover();
+
+    $popoverElement.on('click', function () {
+
+        let that = $(this);
+
+        that.popover();
+
+        setTimeout(function () {
+            that.popover('hide');
+        }, 1500);
+
+    });
+
+}
