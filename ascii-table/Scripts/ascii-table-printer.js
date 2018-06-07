@@ -1,4 +1,10 @@
-﻿function createDetailsList() {
+﻿function deleteAllChildren(element) {
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
+
+function createDetailsList() {
     var ul = document.createElement('ul');
     ul.classList.add('list-inline');
 
@@ -42,12 +48,6 @@ function createDetailsListItem(label, value) {
     showCopiedPopover();
 
     return li;
-}
-
-function deleteAllChildren(element) {
-    while (element.firstChild) {
-        element.removeChild(element.firstChild);
-    }
 }
 
 function createDetailsHeader(char) {

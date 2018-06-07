@@ -1,28 +1,5 @@
-﻿//class PrintableChar extends Char {
-//    constructor(charCode, charType, name) {
-//        super(charCode, charType);
-
-//        this.name = name;
-
-//        console.log('name: ' + name);
-//        console.log('this.name: ' + this.name);
-//    }
-
-//    get glyph() {
-//        return String.fromCharCode(this.charCode);
-//    }
-
-//    get char() {
-//        if (this.name) {
-//            return this.name;
-//        }
-
-//        return this.glyph;
-//    }
-//}
-
-class PrintableChar {
-    constructor(charCode, charType, glyph, escapeCode) {
+﻿class PrintableChar {
+    constructor(charCode, charType, glyph, escapeCode, description) {
         this.charType = charType;
         this.binary = charCode.toString(2);
         this.octaDecimal = charCode.toString(8);
@@ -30,11 +7,14 @@ class PrintableChar {
         this.hexaDecimal = charCode.toString(16);
         this.escapeCode = escapeCode;
         this.htmlCode = '&#' + charCode + ';';
+        this.description = description;
 
         if (glyph) {
             this.glyph = glyph;
-        } else {
+        } else if (String.fromCharCode(charCode) != ' ') {
             this.glyph = String.fromCharCode(charCode);
+        } else {
+            this.glyph = description;
         }
     }
 }
