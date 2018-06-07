@@ -121,8 +121,7 @@ function populateHtmlTables(htmlTables, numberOfRows, asciiTableArray) {
                 td.innerText = asciiTableArray[j].glyph;
                 tr.appendChild(td);
 
-                let currentTableBody = currentTable.querySelector('tbody');
-                currentTableBody.appendChild(tr);
+                currentTable.children[1].appendChild(tr);
             }
         }
     }

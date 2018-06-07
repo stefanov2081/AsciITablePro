@@ -3,7 +3,7 @@
         this.charType = charType;
         this.binary = charCode.toString(2);
         this.octaDecimal = charCode.toString(8);
-        this.decimal = charCode;
+        this.decimal = charCode.toString(10);;
         this.hexaDecimal = charCode.toString(16);
         this.escapeCode = escapeCode;
         this.htmlCode = '&#' + charCode + ';';
