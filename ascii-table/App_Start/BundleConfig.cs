@@ -16,6 +16,7 @@ namespace ascii_table
                 "~/Scripts/copy-to-clipboard.js",
                 "~/Scripts/ascii-table-printer.js",
                 "~/Scripts/ascii-table-repository.js",
+                "~/Scripts/google-analytics.js",
                 "~/Scripts/script.js"));
 
             bundles.Add(new StyleBundle("~/Content/style").Include(

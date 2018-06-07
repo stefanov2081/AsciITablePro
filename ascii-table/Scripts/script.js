@@ -5,14 +5,10 @@
 
     displayCharacterDetails(asciiTableRepository.standartAsciiTable[0]);
     printAsciiTable(asciiTableRepository.asciiTable, asciiTableContainerId, null, ['table', 'ascii-table', 'col'], numberOfRows);
-    //printAsciiTable(asciiTableRepository.standartAsciiTable, asciiTableContainerId, null, ['table', 'ascii-table', 'col'], numberOfRows);
-    //printAsciiTable(asciiTableRepository.extendedAsciiTable, asciiTableContainerId, null, ['table', 'ascii-table', 'col'], numberOfRows);
-
     addOnKeyUpEventOnSearchInput(asciiTableRepository, asciiTableContainerId, numberOfRows);
 })();
 
 //Shiny CSS Effect On Click And Copy Function
-
 (function () {
 
     let $asciiCharCodeCard = $('.ascii-char-code-card');
