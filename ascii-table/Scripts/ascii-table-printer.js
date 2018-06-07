@@ -1,5 +1,5 @@
 ﻿function createDetailsList() {
-    var ul = document.createElement('ul');
+    let ul = document.createElement('ul');
     ul.classList.add('list-inline');
 
     return ul;
@@ -77,7 +77,7 @@ function displayCharacterDetails(char) {
     charDetailsContainer.appendChild(charDetailsList);
 
     for (let propertyKey in char) {
-        if (propertyKey !== 'charType')
+        if (propertyKey !== 'charType' && char[propertyKey])
             charDetailsList.appendChild(
                 createDetailsListItem(propertyKey, char[propertyKey]));
     }
