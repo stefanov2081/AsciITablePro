@@ -41,6 +41,9 @@ a {
   a:hover {
     color: #495057; }
 
+.hidden-input {
+  display: none; }
+
 .popover {
   background: #000; }
   .popover .arrow {

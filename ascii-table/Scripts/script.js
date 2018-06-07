@@ -58,6 +58,26 @@
 
 (function () {
 
+    let asciiCardElement = $('.ascii-char-code-card');
+    let asciiCharValueElement = '.ascii-char-value';
+
+    asciiCardElement.on('click', function () {
+
+        let asciiCharValueElementText = $(this).children(asciiCharValueElement).text();
+        let hiddenInputElement = document.createElement("input");
+
+        hiddenInputElement.setAttribute('value', asciiCharValueElementText);
+
+        document.body.appendChild(hiddenInputElement);
+
+        hiddenInputElement.select();
+
+        document.execCommand('copy');
+
+        hiddenInputElement.remove();
+
+    });
+
 })();
 
 //Copied On Click Popover Function
