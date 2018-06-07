@@ -199,6 +199,7 @@
     <Content Include="Content\card.scss" />
     <Content Include="Content\breakpoints.scss" />
     <None Include="packages.config" />
+    <Content Include="Views\Shared\GoogleAnalytics.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
