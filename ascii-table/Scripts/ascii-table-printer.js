@@ -44,9 +44,6 @@ function createDetailsListItem(label, value) {
     divContainer.appendChild(divIcon);
     li.appendChild(divContainer);
 
-    clipboardCopy();
-    showCopiedPopover();
-
     return li;
 }
 
@@ -90,6 +87,9 @@ function displayCharacterDetails(char) {
             charDetailsList.appendChild(
                 createDetailsListItem(propertyKey, char[propertyKey]));
     }
+
+    clipboardCopy();
+    showCopiedPopover();
 }
 
 function createAsciiTableContainer(tagName, classList) {
@@ -262,7 +262,6 @@ function clipboardCopy() {
 //Copied On Click Popover Function
 
 function showCopiedPopover() {
-
     let $popoverElement = $('.ascii-char-code-card');
     let $popoverInit = $('[data-toggle="popover"]');
 
@@ -277,7 +276,5 @@ function showCopiedPopover() {
         setTimeout(function () {
             that.popover('hide');
         }, 1500);
-
     });
-
 }
