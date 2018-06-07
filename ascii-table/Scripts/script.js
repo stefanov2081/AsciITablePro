@@ -6,23 +6,7 @@
     printAsciiTable(asciiTableRepository.standartAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], numberOfRows);
     printAsciiTable(asciiTableRepository.extendedAsciiTable, 'ascii-table-container', null, ['table', 'ascii-table', 'col'], numberOfRows);
 
-    var searchInput = document.getElementById('search');
-    searchInput.onkeyup = function () {
-        let result = [];
-
-        if (this.value && this.value && this.value.trim() != '') {
-            for (var i = 0; i < asciiTableRepository.asciiTable; i++) {
-                if (asciiTableRepository.asciiTable[i][key] == this.value) {
-                    result.push(asciiTableRepository.asciiTable[i]);
-                }
-            }
-
-            console.log(this);
-
-        }
-
-        return result;
-    };
+    addOnKeyUpEventOnSearchInput(asciiTableRepository, 'ascii-table-container', numberOfRows);
 })();
 
 //Shiny CSS Effect On Click And Copy Function

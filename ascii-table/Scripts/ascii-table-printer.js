@@ -174,6 +174,53 @@ function printAsciiTable(asciiTableArray, containerId, header, classList, number
     mainContainer.appendChild(asciiTableContainer);
 }
 
+function clearAndPrintAsciiTable(asciiTableArray, containerId, header, classList, numberOfRows) {
+    deleteAllChildren(document.getElementById(containerId));
+    printAsciiTable(asciiTableArray, containerId, header, classList, numberOfRows);
+}
+
+function addOnKeyUpEventOnSearchInput(asciiTableRepository, containerId, numberOfRows) {
+    var searchValue = document.getElementById('search-value');
+
+    searchValue.onkeyup = function () {
+        let searchKey = document.getElementById('search-key');
+        let keyDictionary = [];
+        keyDictionary['Char'] = 'glyph';
+        keyDictionary['CHAR'] = 'glyph';
+        keyDictionary['DECIMAL'] = 'decimal';
+        keyDictionary['HEX'] = 'hexaDecimal';
+        keyDictionary['BINARY'] = 'binary';
+        keyDictionary['HTML CODE'] = 'htmlCode';
+        keyDictionary['ESCAPE CODE'] = 'escapeCode';
+
+        console.log(searchKey.children[0].innerText);
+
+        if (!keyDictionary[[searchKey.children[0].innerText]]) {
+            return;
+        }
+
+        let result = [];
+        //console.log(searchKey);
+        //console.log(keyDictionary[searchKey.children[0].innerText]);
+        //console.log(searchKey.children[0].innerText);
+
+        if (this.value && this.value && this.value.trim() != '') {
+            for (var i = 0; i < asciiTableRepository.asciiTable.length; i++) {
+                if (String(asciiTableRepository.asciiTable[i][keyDictionary[searchKey.children[0].innerText]]).toLowerCase().includes(this.value.toLowerCase())) {
+                    result.push(asciiTableRepository.asciiTable[i]);
+                }
+            }
+
+            clearAndPrintAsciiTable(result, containerId, 'Search Resuls', ['table', 'ascii-table', 'col'], numberOfRows);
+        } else {
+            clearAndPrintAsciiTable(asciiTableRepository.standartAsciiTable, containerId, 'Standart ASCII Table', ['table', 'ascii-table', 'col'], numberOfRows);
+            printAsciiTable(asciiTableRepository.extendedAsciiTable, containerId, 'Extended ASCII Table', ['table', 'ascii-table', 'col'], numberOfRows);
+        }
+
+        return result;
+    };
+}
+
 //class AcsiiTablePrinter {
 //    printAsciiTable(asciiTableArray, containerId, header, classList, numberOfRows) {
 //        let mainContainer = document.getElementById(containerId);
