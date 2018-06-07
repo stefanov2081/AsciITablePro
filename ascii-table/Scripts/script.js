@@ -54,6 +54,12 @@
     });
 })();
 
+//Copy To Clipboard Function
+
+(function () {
+
+})();
+
 //Copied On Click Popover Function
 
 (function () {
