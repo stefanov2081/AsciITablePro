@@ -162,6 +162,7 @@
     </Content>
     <Content Include="Scripts\ascii-table-printer.js" />
     <Content Include="Scripts\ascii-table-repository.js" />
+    <Content Include="Scripts\bundle.js" />
     <Content Include="Scripts\char-type.js" />
     <Content Include="Scripts\common.js" />
     <Content Include="Scripts\control-char.js" />
@@ -201,6 +202,8 @@
     <Content Include="Content\breakpoints.scss" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\GoogleAnalytics.cshtml" />
+    <Content Include="tsconfig.json" />
+    <Content Include="Scripts\bundle.js.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
