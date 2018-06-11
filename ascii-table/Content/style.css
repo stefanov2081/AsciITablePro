@@ -72,7 +72,7 @@ a {
   max-width: 1540px;
   position: relative;
   margin-bottom: 1rem;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
   -moz-box-shadow: inherit;
   -webkit-box-shadow: inherit;
   box-shadow: 0 3px 5px rgba(117, 117, 117, 0.35); }
@@ -144,7 +144,7 @@ a {
   background: none; }
   .ascii-card .card-header,
   .ascii-card .card-body {
-    padding: 1.2rem 2.8rem;
+    padding: 1.2rem 1.4rem;
     border-radius: 0; }
   .ascii-card .card-header {
     background: #495057; }
@@ -199,7 +199,7 @@ a {
   margin: 0;
   /*border: 1px solid $color-white;*/ }
   .ascii-table thead tr {
-    background: #fff; }
+    background: rgba(255, 255, 255, 0.75); }
   .ascii-table thead th {
     border: none;
     font-weight: 600; }
@@ -267,37 +267,37 @@ a {
 
 .ascii-table-legend tbody .control-character,
 .ascii-table tbody .control-character {
-  background: rgba(255, 255, 141, 0.3); }
+  background: rgba(255, 255, 141, 0.1); }
 
 .ascii-table-legend tbody .punctuation,
 .ascii-table tbody .punctuation {
-  background: rgba(128, 216, 255, 0.3); }
+  background: rgba(128, 216, 255, 0.1); }
 
 .ascii-table-legend tbody .numeric-digit,
 .ascii-table tbody .numeric-digit {
-  background: rgba(179, 136, 255, 0.3); }
+  background: rgba(179, 136, 255, 0.1); }
 
 .ascii-table-legend tbody .alphabetic-uppercase,
 .ascii-table tbody .alphabetic-uppercase {
-  background: rgba(204, 255, 144, 0.3); }
+  background: rgba(204, 255, 144, 0.1); }
 
 .ascii-table-legend tbody .alphabetic-lowercase,
 .ascii-table tbody .alphabetic-lowercase {
-  background: rgba(198, 255, 0, 0.3); }
+  background: rgba(198, 255, 0, 0.1); }
 
 .ascii-table-legend tbody .extended-punctuation,
 .ascii-table tbody .extended-punctuation {
-  background: rgba(224, 224, 224, 0.3); }
+  background: rgba(224, 224, 224, 0.1); }
 
 .ascii-table-legend tbody .graphic-character,
 .ascii-table tbody .graphic-character {
-  background: rgba(255, 209, 128, 0.3); }
+  background: rgba(255, 209, 128, 0.1); }
 
 .ascii-table-legend tbody .international,
 .ascii-table tbody .international {
-  background: rgba(255, 158, 128, 0.3); }
+  background: rgba(255, 158, 128, 0.1); }
 
 .ascii-table-legend tbody .undefined,
 .ascii-table tbody .undefined {
-  background: rgba(215, 204, 200, 0.3); }
+  background: rgba(215, 204, 200, 0.1); }
 

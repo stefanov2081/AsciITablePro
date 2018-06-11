@@ -1,10 +1,10 @@
 ﻿class PrintableChar {
     constructor(charCode, charType, glyph, escapeCode, description) {
         this.charType = charType;
-        this.binary = charCode.toString(2);
-        this.octaDecimal = charCode.toString(8);
-        this.decimal = charCode.toString(10);;
-        this.hexaDecimal = charCode.toString(16);
+        this.bin = charCode.toString(2);
+        this.oct = charCode.toString(8);
+        this.dec = charCode.toString(10);;
+        this.hex = charCode.toString(16);
         this.escapeCode = escapeCode;
         this.htmlCode = '&#' + charCode + ';';
         this.description = description;

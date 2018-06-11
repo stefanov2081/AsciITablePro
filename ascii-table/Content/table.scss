@@ -5,10 +5,9 @@
 .ascii-table {
     margin: 0;
     /*border: 1px solid $color-white;*/
-
     thead {
         tr {
-            background: $color-white;
+            background: rgba($color-white, .75);
         }
 
         th {

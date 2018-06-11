@@ -7,7 +7,9 @@
     divContainer.setAttribute('data-content', 'Copied!');
 
     let divLabel = createElement('div', ['ascii-char-label']);
-    divLabel.innerText = label + ':';
+    let upprcaseRegex = /(?=[A-Z])/;
+    let labelSplit = label.split(upprcaseRegex).join(" ");
+    divLabel.innerText = `${labelSplit}:`;
 
     let divValue = createElement('div', ['ascii-char-value']);
     divValue.innerText = value;
@@ -58,9 +60,14 @@ function displayCharacterDetails(char) {
     charDetailsContainer.appendChild(charDetailsList);
 
     for (let propertyKey in char) {
-        if (propertyKey !== 'charType' && char[propertyKey])
+
+        if (propertyKey !== 'charType' &&
+            propertyKey !== 'description' &&
+            propertyKey !== 'abbreviation' &&
+            char[propertyKey])
             charDetailsList.appendChild(
-                createDetailsListItem(propertyKey, char[propertyKey]));
+                createDetailsListItem(propertyKey, char[propertyKey])
+            );
     }
 
     clipboardCopy();
@@ -114,7 +121,7 @@ function populateHtmlTables(htmlTables, numberOfRows, asciiTableArray) {
                 tr.onclick = function () { displayCharacterDetails(asciiTableArray[j]); };
 
                 td = document.createElement('td');
-                td.innerText = asciiTableArray[j].decimal;
+                td.innerText = asciiTableArray[j].dec;
                 tr.appendChild(td);
 
                 td = document.createElement('td');
@@ -148,9 +155,9 @@ function addOnKeyUpEventOnSearchInput(asciiTableRepository, containerId, numberO
         let keyDictionary = [];
         keyDictionary['Char'] = 'glyph';
         keyDictionary['CHAR'] = 'glyph';
-        keyDictionary['DECIMAL'] = 'decimal';
-        keyDictionary['HEX'] = 'hexaDecimal';
-        keyDictionary['BINARY'] = 'binary';
+        keyDictionary['DECIMAL'] = 'dec';
+        keyDictionary['HEX'] = 'hex';
+        keyDictionary['BINARY'] = 'bin';
         keyDictionary['HTML CODE'] = 'htmlCode';
         keyDictionary['ESCAPE CODE'] = 'escapeCode';
 

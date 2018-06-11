@@ -63,7 +63,7 @@ a {
     max-width: 1540px;
     position: relative;
     margin-bottom: 1rem;
-    background: rgba($color-white, .6);
+    background: rgba($color-white, .8);
     -moz-box-shadow: inherit;
     -webkit-box-shadow: inherit;
     box-shadow: 0 3px 5px rgba($shadow-color, .35);
@@ -84,6 +84,8 @@ a {
     $graphic-char: #ffd180;
     $international-char: #ff9e80;
     $udefined: #d7ccc8;
+    $color-transparency: .3;
+    $background-transparency: .1;
 
     .list-inline-item {
         margin-bottom: 10px;
@@ -96,76 +98,76 @@ a {
     }
 
     .control-character .fas {
-        color: rgba($control-char, .3);
+        color: rgba($control-char, $color-transparency);
     }
 
     .punctuation .fas {
-        color: rgba($punctuation-char, .3);
+        color: rgba($punctuation-char, $color-transparency);
     }
 
     .numeric-digit .fas {
-        color: rgba($numeric-char, .3);
+        color: rgba($numeric-char, $color-transparency);
     }
 
     .alphabetic-uppercase .fas {
-        color: rgba($alphabetic-upper, .3);
+        color: rgba($alphabetic-upper, $color-transparency);
     }
 
     .alphabetic-lowercase .fas {
-        color: rgba($alphabetic-low, .3);
+        color: rgba($alphabetic-low, $color-transparency);
     }
 
     .extended-punctuation .fas {
-        color: rgba($extended-punct, .3);
+        color: rgba($extended-punct, $color-transparency);
     }
 
     .graphic-character .fas {
-        color: rgba($graphic-char, .3);
+        color: rgba($graphic-char, $color-transparency);
     }
 
     .international .fas {
-        color: rgba($international-char, .3);
+        color: rgba($international-char, $color-transparency);
     }
 
     .undefined .fas {
-        color: rgba($udefined, .3);
+        color: rgba($udefined, $color-transparency);
     }
 
     tbody {
         .control-character {
-            background: rgba($control-char, .3);
+            background: rgba($control-char, $background-transparency);
         }
 
         .punctuation {
-            background: rgba($punctuation-char, .3);
+            background: rgba($punctuation-char, $background-transparency);
         }
 
         .numeric-digit {
-            background: rgba($numeric-char, .3);
+            background: rgba($numeric-char, $background-transparency);
         }
 
         .alphabetic-uppercase {
-            background: rgba($alphabetic-upper, .3);
+            background: rgba($alphabetic-upper, $background-transparency);
         }
 
         .alphabetic-lowercase {
-            background: rgba($alphabetic-low, .3);
+            background: rgba($alphabetic-low, $background-transparency);
         }
 
         .extended-punctuation {
-            background: rgba($extended-punct, .3);
+            background: rgba($extended-punct, $background-transparency);
         }
 
         .graphic-character {
-            background: rgba($graphic-char, .3);
+            background: rgba($graphic-char, $background-transparency);
         }
 
         .international {
-            background: rgba($international-char, .3);
+            background: rgba($international-char, $background-transparency);
         }
 
         .undefined {
-            background: rgba($udefined, .3);
+            background: rgba($udefined, $background-transparency);
         }
     }
 }
