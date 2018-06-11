@@ -21,30 +21,32 @@
                             <input id="search-value" class="form-control" type="search" placeholder="Search" aria-label="Search">
                         </form>
 
-                        <div class="dropdown ml-auto">
+                        @*<div class="dropdown ml-auto">*@
+                        <div class="dropdown">
                             <button id="search-key" class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span id="selected" class="active">Char</span>
-                                    <i class="fas fa-caret-down"></i>
+                                <span id="selected" class="active">Decimal</span>
+                                <i class="fas fa-caret-down"></i>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                 <a class="dropdown-item" href="#">Char</a>
+                                <a class="dropdown-item" href="#">Binary</a>
+                                <a class="dropdown-item" href="#">Oct</a>
                                 <a class="dropdown-item" href="#">Decimal</a>
                                 <a class="dropdown-item" href="#">Hex</a>
-                                <a class="dropdown-item" href="#">Binary</a>
-                                <a class="dropdown-item" href="#">HTML Code</a>
                                 <a class="dropdown-item" href="#">Escape Code</a>
+                                <a class="dropdown-item" href="#">HTML Code</a>
                             </div>
                         </div>
                     </div>
 
-                    <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">How To Use</a>
-                        </li>
-                    </ul>
+                    @*<ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">How To Use</a>
+                            </li>
+                        </ul>*@
                 </div>
             </nav>
         </div>
@@ -55,71 +57,71 @@
             <div class="card ascii-card">
                 <div id="ascii-details-container" class="card-header text-white">
                     @*<h5>Character: <span class="font-weight-bold">SOH</span> <span>(Start Of Heading)</span></h5>
-                    <ul id="char-details-list" class="list-inline">
-                        <li class="list-inline-item">
-                            <div class="card ascii-char-code-card" data-toggle="popover" data-placement="bottom" data-content="Copied!">
-                                <div class="ascii-char-label">Binary:</div>
-                                <div class="ascii-char-value">000000</div>
-                                <div class="ascii-char-icon">
-                                    <i class="far fa-clipboard"></i>
+                        <ul id="char-details-list" class="list-inline">
+                            <li class="list-inline-item">
+                                <div class="card ascii-char-code-card" data-toggle="popover" data-placement="bottom" data-content="Copied!">
+                                    <div class="ascii-char-label">Binary:</div>
+                                    <div class="ascii-char-value">000000</div>
+                                    <div class="ascii-char-icon">
+                                        <i class="far fa-clipboard"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="list-inline-item">
-                            <div class="card ascii-char-code-card" data-toggle="popover" data-placement="bottom" data-content="Copied!">
-                                <div class="ascii-char-label">Oct:</div>
-                                <div class="ascii-char-value">001</div>
-                                <div class="ascii-char-icon">
-                                    <i class="far fa-clipboard"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="card ascii-char-code-card" data-toggle="popover" data-placement="bottom" data-content="Copied!">
+                                    <div class="ascii-char-label">Oct:</div>
+                                    <div class="ascii-char-value">001</div>
+                                    <div class="ascii-char-icon">
+                                        <i class="far fa-clipboard"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="list-inline-item">
-                            <div class="card ascii-char-code-card" data-toggle="popover" data-placement="bottom" data-content="Copied!">
-                                <div class="ascii-char-label">Dec:</div>
-                                <div class="ascii-char-value">1</div>
-                                <div class="ascii-char-icon">
-                                    <i class="far fa-clipboard"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="card ascii-char-code-card" data-toggle="popover" data-placement="bottom" data-content="Copied!">
+                                    <div class="ascii-char-label">Dec:</div>
+                                    <div class="ascii-char-value">1</div>
+                                    <div class="ascii-char-icon">
+                                        <i class="far fa-clipboard"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="list-inline-item">
-                            <div class="card ascii-char-code-card" data-toggle="popover" data-placement="bottom" data-content="Copied!">
-                                <div class="ascii-char-label">Hex:</div>
-                                <div class="ascii-char-value">1</div>
-                                <div class="ascii-char-icon">
-                                    <i class="far fa-clipboard"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="card ascii-char-code-card" data-toggle="popover" data-placement="bottom" data-content="Copied!">
+                                    <div class="ascii-char-label">Hex:</div>
+                                    <div class="ascii-char-value">1</div>
+                                    <div class="ascii-char-icon">
+                                        <i class="far fa-clipboard"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="list-inline-item">
-                            <div class="card ascii-char-code-card" data-toggle="popover" data-placement="bottom" data-content="Copied!">
-                                <div class="ascii-char-label">Glyph:</div>
-                                <div class="ascii-char-value">SOH</div>
-                                <div class="ascii-char-icon">
-                                    <i class="far fa-clipboard"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="card ascii-char-code-card" data-toggle="popover" data-placement="bottom" data-content="Copied!">
+                                    <div class="ascii-char-label">Glyph:</div>
+                                    <div class="ascii-char-value">SOH</div>
+                                    <div class="ascii-char-icon">
+                                        <i class="far fa-clipboard"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="list-inline-item">
-                            <div class="card ascii-char-code-card" data-toggle="popover" data-placement="bottom" data-content="Copied!">
-                                <div class="ascii-char-label">Caret Notation:</div>
-                                <div class="ascii-char-value">^A</div>
-                                <div class="ascii-char-icon">
-                                    <i class="far fa-clipboard"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="card ascii-char-code-card" data-toggle="popover" data-placement="bottom" data-content="Copied!">
+                                    <div class="ascii-char-label">Caret Notation:</div>
+                                    <div class="ascii-char-value">^A</div>
+                                    <div class="ascii-char-icon">
+                                        <i class="far fa-clipboard"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="list-inline-item">
-                            <div class="card ascii-char-code-card" data-toggle="popover" data-placement="bottom" data-content="Copied!">
-                                <div class="ascii-char-label">C Escape Squence:</div>
-                                <div class="ascii-char-value">-</div>
-                                <div class="ascii-char-icon">
-                                    <i class="far fa-clipboard"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="card ascii-char-code-card" data-toggle="popover" data-placement="bottom" data-content="Copied!">
+                                    <div class="ascii-char-label">C Escape Squence:</div>
+                                    <div class="ascii-char-value">-</div>
+                                    <div class="ascii-char-icon">
+                                        <i class="far fa-clipboard"></i>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                    </ul>*@
+                            </li>
+                        </ul>*@
                 </div>
 
                 <div class="card-body">
@@ -152,61 +154,61 @@
                         </div>
 
                         @*<div class="col-md-3">
-                            <table class="table ascii-table ascii-table-legend col">
-                                <thead>
-                                    <tr>
-                                        <th>Character legend</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="control-character">
-                                        <td>
-                                            Control character
-                                        </td>
-                                    </tr>
-                                    <tr class="punctuation">
-                                        <td>
-                                            Punctuation character
-                                        </td>
-                                    </tr>
-                                    <tr class="numeric-digit">
-                                        <td>
-                                            Numeric character
-                                        </td>
-                                    </tr>
-                                    <tr class="alphabetic-uppercase">
-                                        <td>
-                                            Alphabetic uppercase
-                                        </td>
-                                    </tr>
-                                    <tr class="alphabetic-lowercase">
-                                        <td>
-                                            Alphabetic lowercase
-                                        </td>
-                                    </tr>
-                                    <tr class="extended-punctuation">
-                                        <td>
-                                            Extended punctuation
-                                        </td>
-                                    </tr>
-                                    <tr class="graphic-character">
-                                        <td>
-                                            Graphic character
-                                        </td>
-                                    </tr>
-                                    <tr class="international">
-                                        <td>
-                                            International character
-                                        </td>
-                                    </tr>
-                                    <tr class="undefined">
-                                        <td>
-                                            Undefined
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>*@
+                                <table class="table ascii-table ascii-table-legend col">
+                                    <thead>
+                                        <tr>
+                                            <th>Character legend</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="control-character">
+                                            <td>
+                                                Control character
+                                            </td>
+                                        </tr>
+                                        <tr class="punctuation">
+                                            <td>
+                                                Punctuation character
+                                            </td>
+                                        </tr>
+                                        <tr class="numeric-digit">
+                                            <td>
+                                                Numeric character
+                                            </td>
+                                        </tr>
+                                        <tr class="alphabetic-uppercase">
+                                            <td>
+                                                Alphabetic uppercase
+                                            </td>
+                                        </tr>
+                                        <tr class="alphabetic-lowercase">
+                                            <td>
+                                                Alphabetic lowercase
+                                            </td>
+                                        </tr>
+                                        <tr class="extended-punctuation">
+                                            <td>
+                                                Extended punctuation
+                                            </td>
+                                        </tr>
+                                        <tr class="graphic-character">
+                                            <td>
+                                                Graphic character
+                                            </td>
+                                        </tr>
+                                        <tr class="international">
+                                            <td>
+                                                International character
+                                            </td>
+                                        </tr>
+                                        <tr class="undefined">
+                                            <td>
+                                                Undefined
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>*@
                     </div>
                 </div>
             </div>

@@ -17,7 +17,8 @@
     width: calc(100% - 16px);
     padding: 1rem; }
   .ascii-container .ascii-nav .navbar-collapse .dropdown {
-    margin: 0; }
+    /*margin: 0;*/
+    margin: 0 auto; }
     .ascii-container .ascii-nav .navbar-collapse .dropdown::before {
       display: none; }
   .ascii-container .ascii-nav .navbar-collapse::before {
@@ -114,7 +115,15 @@ a {
     border: none;
     background: none; }
   .ascii-nav .dropdown {
-    padding-right: 2rem; }
+    /*padding-right: 2rem;*/
+    /*&::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -21px;
+            bottom: -21px;
+            border-left: 1px solid rgba($text-color-muted,.3);
+        }*/ }
     .ascii-nav .dropdown .active {
       color: #42a5f5;
       font-weight: 600;
@@ -128,13 +137,6 @@ a {
     .ascii-nav .dropdown .dropdown-item:hover {
       background: #42a5f5;
       color: #fff; }
-    .ascii-nav .dropdown::before {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: -21px;
-      bottom: -21px;
-      border-left: 1px solid rgba(158, 158, 158, 0.3); }
 
 .card {
   border: none; }

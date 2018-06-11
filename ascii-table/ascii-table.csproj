@@ -195,7 +195,7 @@
     </None>
     <Content Include="Content\variables.scss" />
     <Content Include="Content\mixins.scss" />
-    <Content Include="Content\navbar.scss" />
+    <Content Include="Content\navigation.scss" />
     <Content Include="Content\table.scss" />
     <Content Include="Content\card.scss" />
     <Content Include="Content\breakpoints.scss" />
