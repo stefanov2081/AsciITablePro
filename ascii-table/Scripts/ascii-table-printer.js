@@ -184,8 +184,8 @@ function addOnKeyUpEventOnSearchInput(asciiTableRepository, containerId, numberO
 
             clearAndPrintAsciiTable(result, containerId, 'Search Resuls', ['table', 'ascii-table', 'col'], numberOfRows);
         } else {
-            clearAndPrintAsciiTable(asciiTableRepository.standartAsciiTable, containerId, 'Standart ASCII Table', ['table', 'ascii-table', 'col'], numberOfRows);
-            printAsciiTable(asciiTableRepository.extendedAsciiTable, containerId, 'Extended ASCII Table', ['table', 'ascii-table', 'col'], numberOfRows);
+            clearAndPrintAsciiTable(asciiTableRepository.asciiTable, containerId, 'Standart ASCII Table', ['table', 'ascii-table', 'col'], numberOfRows);
+            //printAsciiTable(asciiTableRepository.extendedAsciiTable, containerId, 'Extended ASCII Table', ['table', 'ascii-table', 'col'], numberOfRows);
         }
 
         return result;

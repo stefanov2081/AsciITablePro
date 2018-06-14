@@ -118,6 +118,7 @@ function addOnKeyUpEventOnSearchInput(asciiTableRepository, containerId, numberO
     var searchValue = document.getElementById('search-value');
     searchValue.onkeyup = function () {
         var searchKey = document.getElementById('search-key');
+        console.log(searchKey);
         var keyDictionary = [];
         keyDictionary['Char'] = 'glyph';
         keyDictionary['CHAR'] = 'glyph';
@@ -140,8 +141,7 @@ function addOnKeyUpEventOnSearchInput(asciiTableRepository, containerId, numberO
             clearAndPrintAsciiTable(result, containerId, 'Search Resuls', ['table', 'ascii-table', 'col'], numberOfRows);
         }
         else {
-            clearAndPrintAsciiTable(asciiTableRepository.standartAsciiTable, containerId, 'Standart ASCII Table', ['table', 'ascii-table', 'col'], numberOfRows);
-            printAsciiTable(asciiTableRepository.extendedAsciiTable, containerId, 'Extended ASCII Table', ['table', 'ascii-table', 'col'], numberOfRows);
+            clearAndPrintAsciiTable(asciiTableRepository.asciiTable, containerId, 'Standart ASCII Table', ['table', 'ascii-table', 'col'], numberOfRows);
         }
         return result;
     };
