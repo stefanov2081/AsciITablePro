@@ -1,0 +1,99 @@
+﻿.card {
+    border: none;
+}
+
+.ascii-card {
+    margin: 0 -15px;
+    background: none;
+
+    .card-header,
+    .card-body {
+        padding: 1.2rem 1.4rem;
+        border-radius: 0;
+    }
+
+    .card-header {
+        background: $color-dark;
+    }
+
+    .card-sm {
+        .card-body {
+            padding: 0.6rem 1.4rem;
+        }
+    }
+
+    .list-inline {
+        margin: 0;
+    }
+
+    .ascii-char-code-card {
+        position: relative;
+        margin: 0 0 1rem;
+        padding: 0.5rem;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        overflow: hidden;
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+        -webkit-transition: all 0.3s cubic-bezier(.25, .5, .25, 1);
+        transition: all 0.3s cubic-bezier(.25, .5, .25, 1);
+
+        &:hover {
+            cursor: pointer;
+            background: $color-active;
+            -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.25);
+                    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25), 0 5px 10px rgba(0, 0, 0, 0.25);
+
+            div {
+                color: $color-white;
+            }
+        }
+
+        div {
+            margin: 0 3px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: $color-dark;
+        }
+    }
+}
+
+.card-header {
+    overflow: hidden;
+}
+
+.anim {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .5);
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    position: absolute;
+    opacity: 1;
+}
+
+.animEffect {
+    -webkit-animation: clickAnimation .6s linear;
+            animation: clickAnimation .6s linear;
+}
+
+@-webkit-keyframes clickAnimation {
+    100% {
+        -webkit-transform: scale(2);
+                transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes clickAnimation {
+    100% {
+        -webkit-transform: scale(2);
+                transform: scale(2);
+        opacity: 0;
+    }
+}
