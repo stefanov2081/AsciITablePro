@@ -3,7 +3,12 @@
   "include": [ "Scripts/*.js" ],
   "compilerOptions": {
     "allowJs": true,
-    "sourceMap": true,
-    "outFile": "Scripts/bundle.js"
+    "target": "ES5",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "experimentalDecorators": true,
+    //"sourceMap": true,
+    "outDir": "Scripts/Output/"
+    //"outFile": "Scripts/Output/bundle.js"
   }
 }
