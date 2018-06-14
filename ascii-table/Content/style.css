@@ -17,12 +17,21 @@
     width: calc(100% - 16px);
     padding: 1rem; }
   .ascii-container .ascii-nav .navbar-collapse .dropdown {
-    /*margin: 0;*/
     margin: 0 auto; }
     .ascii-container .ascii-nav .navbar-collapse .dropdown::before {
       display: none; }
   .ascii-container .ascii-nav .navbar-collapse::before {
     display: none; } }
+
+@media (max-width: 1264px) {
+  .ascii-table-container.row .col {
+    min-width: 25%;
+    margin: 0 0 .5rem; } }
+
+@media (max-width: 700px) {
+  .ascii-table-container.row .col {
+    min-width: 50%;
+    margin: 0 0 1rem; } }
 
 body {
   font-family: 'Work Sans', sans-serif;
@@ -195,14 +204,19 @@ a {
     opacity: 0; } }
 
 .ascii-table-container {
-  display: flex; }
+  display: flex;
+  padding: 0 1rem; }
   .ascii-table-container .col {
     padding: 0;
     min-width: 150px; }
 
 .ascii-table {
-  width: 100%;
+  display: block;
   margin: 0; }
+  .ascii-table thead,
+  .ascii-table tbody,
+  .ascii-table tr {
+    display: block; }
   .ascii-table thead tr {
     background: rgba(255, 255, 255, 0.75); }
   .ascii-table thead th {
@@ -216,11 +230,19 @@ a {
       cursor: pointer; }
   .ascii-table th,
   .ascii-table td {
-    max-width: 200px;
+    display: inline-block;
     padding: .25rem .75rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis; }
+    .ascii-table th:first-of-type,
+    .ascii-table td:first-of-type {
+      min-width: 60px;
+      width: 30%; }
+    .ascii-table th:last-of-type,
+    .ascii-table td:last-of-type {
+      max-width: calc(100% - 60px);
+      width: 70%; }
   .ascii-table.col + .col {
     border-left: 1px solid #dee2e6; }
 
@@ -268,7 +290,7 @@ a {
 
 .ascii-table-legend .undefined .fas,
 .ascii-table .undefined .fas {
-  color: rgba(215, 204, 200, 0.3); }
+  color: rgba(69, 90, 100, 0.3); }
 
 .ascii-table-legend tbody .control-character,
 .ascii-table tbody .control-character {
@@ -304,5 +326,5 @@ a {
 
 .ascii-table-legend tbody .undefined,
 .ascii-table tbody .undefined {
-  background: rgba(215, 204, 200, 0.1); }
+  background: rgba(69, 90, 100, 0.1); }
 

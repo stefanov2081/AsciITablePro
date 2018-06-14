@@ -1,5 +1,6 @@
 ﻿.ascii-table-container {
     display: flex;
+    padding: 0 1rem;
 
     .col {
         padding: 0;
@@ -8,8 +9,14 @@
 }
 
 .ascii-table {
-    width: 100%;
+    display: block;
     margin: 0;
+
+    thead,
+    tbody,
+    tr {
+        display: block;
+    }
 
     thead {
         tr {
@@ -36,11 +43,21 @@
 
     th,
     td {
-        max-width: 200px;
+        display: inline-block;
         padding: .25rem .75rem;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+
+        &:first-of-type {
+            min-width: 60px;
+            width: 30%;
+        }
+
+        &:last-of-type {
+            max-width: calc(100% - 60px);
+            width: 70%;
+        }
     }
 
     &.col + .col {
