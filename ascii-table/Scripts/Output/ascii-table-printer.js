@@ -134,7 +134,6 @@ function addOnKeyUpEventOnSearchInput(asciiTableRepository, containerId, numberO
     var searchValue = document.getElementById('search-value');
     searchValue.onkeyup = function () {
         var searchKey = document.getElementById('search-key');
-        console.log(searchKey);
         var keyDictionary = [];
         keyDictionary['Char'] = 'glyph';
         keyDictionary['CHAR'] = 'glyph';
@@ -143,10 +142,7 @@ function addOnKeyUpEventOnSearchInput(asciiTableRepository, containerId, numberO
         keyDictionary['BINARY'] = 'bin';
         keyDictionary['HTML CODE'] = 'htmlCode';
         keyDictionary['ESCAPE CODE'] = 'escapeCode';
-        console.log(searchKey.children[0].innerText);
-        console.log(searchKey.children[0].innerText.toUpperCase());
         if (!keyDictionary[[searchKey.children[0].innerText.toUpperCase()]]) {
-            console.log('return');
             return;
         }
         var result = [];
