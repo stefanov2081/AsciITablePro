@@ -1,0 +1,9 @@
+﻿{
+  "compileOnSave": true,
+  "include": [ "Scripts/*.js" ],
+  "compilerOptions": {
+    "allowJs": true,
+    "sourceMap": true,
+    "outFile": "Scripts/bundle.js"
+  }
+}
