@@ -151,7 +151,10 @@ function addOnKeyUpEventOnSearchInput(asciiTableRepository, containerId, numberO
     var searchValue = document.getElementById('search-value');
 
     searchValue.onkeyup = function () {
+
         let searchKey = document.getElementById('search-key');
+        console.log(searchKey);
+
         let keyDictionary = [];
         keyDictionary['Char'] = 'glyph';
         keyDictionary['CHAR'] = 'glyph';
