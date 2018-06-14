@@ -1,3 +1,17 @@
+if (!String.prototype.includes) {
+    String.prototype.includes = function (search, start) {
+        'use strict';
+        if (typeof start !== 'number') {
+            start = 0;
+        }
+        if (start + search.length > this.length) {
+            return false;
+        }
+        else {
+            return this.indexOf(search, start) !== -1;
+        }
+    };
+}
 function createDetailsListItem(label, value) {
     var li = createElement('li', ['list-inline-item']);
     var divContainer = createElement('div', ['card', 'ascii-char-code-card']);
@@ -130,17 +144,19 @@ function addOnKeyUpEventOnSearchInput(asciiTableRepository, containerId, numberO
         keyDictionary['HTML CODE'] = 'htmlCode';
         keyDictionary['ESCAPE CODE'] = 'escapeCode';
         console.log(searchKey.children[0].innerText);
-        if (!keyDictionary[[searchKey.children[0].innerText]]) {
+        console.log(searchKey.children[0].innerText.toUpperCase());
+        if (!keyDictionary[[searchKey.children[0].innerText.toUpperCase()]]) {
+            console.log('return');
             return;
         }
         var result = [];
         if (this.value && this.value && this.value.trim() != '') {
             for (var i = 0; i < asciiTableRepository.asciiTable.length; i++) {
-                if (String(asciiTableRepository.asciiTable[i][keyDictionary[searchKey.children[0].innerText]]).toLowerCase().includes(this.value.toLowerCase())) {
+                if (String(asciiTableRepository.asciiTable[i][keyDictionary[searchKey.children[0].innerText.toUpperCase()]]).toLowerCase().includes(this.value.toLowerCase())) {
                     result.push(asciiTableRepository.asciiTable[i]);
                 }
             }
-            clearAndPrintAsciiTable(result, containerId, 'Search Resuls', ['table', 'ascii-table'], numberOfRows);
+            clearAndPrintAsciiTable(result, containerId, 'Search Results', ['table', 'ascii-table'], numberOfRows);
         }
         else {
             clearAndPrintAsciiTable(asciiTableRepository.asciiTable, containerId, 'Standart ASCII Table', ['table', 'ascii-table'], numberOfRows);
