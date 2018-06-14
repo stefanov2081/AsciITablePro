@@ -196,10 +196,13 @@ a {
 
 .ascii-table-container {
   display: flex; }
+  .ascii-table-container .col {
+    padding: 0;
+    min-width: 150px; }
 
 .ascii-table {
-  margin: 0;
-  /*border: 1px solid $color-white;*/ }
+  width: 100%;
+  margin: 0; }
   .ascii-table thead tr {
     background: rgba(255, 255, 255, 0.75); }
   .ascii-table thead th {

@@ -1,10 +1,16 @@
 ﻿.ascii-table-container {
     display: flex;
+
+    .col {
+        padding: 0;
+        min-width: 150px;
+    }
 }
 
 .ascii-table {
+    width: 100%;
     margin: 0;
-    /*border: 1px solid $color-white;*/
+
     thead {
         tr {
             background: rgba($color-white, .75);

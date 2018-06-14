@@ -51,7 +51,6 @@ function displayCharacterDetails(char) {
             typeof char[propertyKey] !== 'function' &&
             char[propertyKey])
             charDetailsList.appendChild(createDetailsListItem(propertyKey, char[propertyKey]));
-        console.log(char[propertyKey]);
     }
     clipboardCopy();
     showCopiedPopover();
@@ -75,9 +74,11 @@ function createHtmlTables(asciiTableArray, numberOfRows, classList, asciiTableCo
         thead = createElement('thead');
         thead.appendChild(tr);
         tbody = createElement('tbody');
-        htmlTables[i] = createElement('table', classList);
-        htmlTables[i].appendChild(thead);
-        htmlTables[i].appendChild(tbody);
+        htmlTables[i] = createElement('div', ['col']);
+        var tableWrapper = createElement('table', ['ascii-table']);
+        htmlTables[i].appendChild(tableWrapper);
+        tableWrapper.appendChild(thead);
+        tableWrapper.appendChild(tbody);
         asciiTableContainer.appendChild(htmlTables[i]);
     }
     return htmlTables;
@@ -95,7 +96,8 @@ function populateHtmlTables(htmlTables, numberOfRows, asciiTableArray) {
                 td = document.createElement('td');
                 td.innerText = asciiTableArray[j].glyph;
                 tr.appendChild(td);
-                currentTable.children[1].appendChild(tr);
+                var currentTableChildPopulateContainer = currentTable.children[0].children[1];
+                currentTableChildPopulateContainer.appendChild(tr);
             }
         };
         for (var j = numberOfRows * i; j < numberOfRows * i + numberOfRows; j++) {
@@ -105,7 +107,7 @@ function populateHtmlTables(htmlTables, numberOfRows, asciiTableArray) {
 }
 function printAsciiTable(asciiTableArray, containerId, header, classList, numberOfRows) {
     var mainContainer = document.getElementById(containerId);
-    var asciiTableContainer = createElement('div', ['ascii-table-container']);
+    var asciiTableContainer = createElement('div', ['ascii-table-container', 'row']);
     var htmlTables = createHtmlTables(asciiTableArray, numberOfRows, classList, asciiTableContainer);
     populateHtmlTables(htmlTables, numberOfRows, asciiTableArray);
     mainContainer.appendChild(asciiTableContainer);
@@ -138,10 +140,10 @@ function addOnKeyUpEventOnSearchInput(asciiTableRepository, containerId, numberO
                     result.push(asciiTableRepository.asciiTable[i]);
                 }
             }
-            clearAndPrintAsciiTable(result, containerId, 'Search Resuls', ['table', 'ascii-table', 'col'], numberOfRows);
+            clearAndPrintAsciiTable(result, containerId, 'Search Resuls', ['table', 'ascii-table'], numberOfRows);
         }
         else {
-            clearAndPrintAsciiTable(asciiTableRepository.asciiTable, containerId, 'Standart ASCII Table', ['table', 'ascii-table', 'col'], numberOfRows);
+            clearAndPrintAsciiTable(asciiTableRepository.asciiTable, containerId, 'Standart ASCII Table', ['table', 'ascii-table'], numberOfRows);
         }
         return result;
     };

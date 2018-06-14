@@ -69,8 +69,6 @@ function displayCharacterDetails(char) {
             charDetailsList.appendChild(
                 createDetailsListItem(propertyKey, char[propertyKey])
             );
-
-        console.log(char[propertyKey]);
     }
 
     clipboardCopy();
@@ -102,10 +100,14 @@ function createHtmlTables(asciiTableArray, numberOfRows, classList, asciiTableCo
 
         tbody = createElement('tbody');
 
-        htmlTables[i] = createElement('table', classList);
+        htmlTables[i] = createElement('div', ['col']);
 
-        htmlTables[i].appendChild(thead);
-        htmlTables[i].appendChild(tbody);
+        let tableWrapper = createElement('table', ['ascii-table']);
+
+        htmlTables[i].appendChild(tableWrapper);
+        tableWrapper.appendChild(thead);
+        tableWrapper.appendChild(tbody);
+
         asciiTableContainer.appendChild(htmlTables[i]);
     }
 
@@ -131,7 +133,9 @@ function populateHtmlTables(htmlTables, numberOfRows, asciiTableArray) {
                 td.innerText = asciiTableArray[j].glyph;
                 tr.appendChild(td);
 
-                currentTable.children[1].appendChild(tr);
+                let currentTableChildPopulateContainer = currentTable.children[0].children[1];
+
+                currentTableChildPopulateContainer.appendChild(tr);
             }
         }
     }
@@ -139,7 +143,7 @@ function populateHtmlTables(htmlTables, numberOfRows, asciiTableArray) {
 
 function printAsciiTable(asciiTableArray, containerId, header, classList, numberOfRows) {
     let mainContainer = document.getElementById(containerId);
-    let asciiTableContainer = createElement('div', ['ascii-table-container']);
+    let asciiTableContainer = createElement('div', ['ascii-table-container', 'row']);
     let htmlTables = createHtmlTables(asciiTableArray, numberOfRows, classList, asciiTableContainer);
     populateHtmlTables(htmlTables, numberOfRows, asciiTableArray)
     mainContainer.appendChild(asciiTableContainer);
@@ -182,9 +186,9 @@ function addOnKeyUpEventOnSearchInput(asciiTableRepository, containerId, numberO
                 }
             }
 
-            clearAndPrintAsciiTable(result, containerId, 'Search Resuls', ['table', 'ascii-table', 'col'], numberOfRows);
+            clearAndPrintAsciiTable(result, containerId, 'Search Resuls', ['table', 'ascii-table'], numberOfRows);
         } else {
-            clearAndPrintAsciiTable(asciiTableRepository.asciiTable, containerId, 'Standart ASCII Table', ['table', 'ascii-table', 'col'], numberOfRows);
+            clearAndPrintAsciiTable(asciiTableRepository.asciiTable, containerId, 'Standart ASCII Table', ['table', 'ascii-table'], numberOfRows);
             //printAsciiTable(asciiTableRepository.extendedAsciiTable, containerId, 'Extended ASCII Table', ['table', 'ascii-table', 'col'], numberOfRows);
         }
 

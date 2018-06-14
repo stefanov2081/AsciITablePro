@@ -4,7 +4,7 @@
     var asciiTableRepository = new AsciiTableRepository();
 
     displayCharacterDetails(asciiTableRepository.standartAsciiTable[0]);
-    printAsciiTable(asciiTableRepository.asciiTable, asciiTableContainerId, null, ['table', 'ascii-table', 'col'], numberOfRows);
+    printAsciiTable(asciiTableRepository.asciiTable, asciiTableContainerId, null, ['table', 'ascii-table'], numberOfRows);
     addOnKeyUpEventOnSearchInput(asciiTableRepository, asciiTableContainerId, numberOfRows);
 })();
 
