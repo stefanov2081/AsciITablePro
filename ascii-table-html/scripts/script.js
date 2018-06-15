@@ -172,7 +172,11 @@ $(function () {
     printAsciiDetails(asciiTableRepository.asciiTable[1]);
 
     $('tr').click(function () {
-        clearAsciiDetails();
-        printAsciiDetails(asciiTableRepository.asciiTable[$(this).attr('data-index')]);
+        var index = $(this).attr('data-index');
+
+        if (index) {
+            clearAsciiDetails();
+            printAsciiDetails(asciiTableRepository.asciiTable[$(this).attr('data-index')]);
+        }
     });
 });
