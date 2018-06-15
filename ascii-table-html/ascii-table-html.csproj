@@ -69,6 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
+    <Content Include="scripts\script.js" />
+    <Content Include="styles\mixins.css" />
+    <Content Include="styles\mixins.min.css" />
+    <Content Include="styles\style.css" />
+    <Content Include="styles\style.min.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +82,13 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="styles\breakpoints.scss" />
+    <Content Include="styles\card.scss" />
+    <Content Include="styles\mixins.scss" />
+    <Content Include="styles\navigation.scss" />
+    <Content Include="styles\style.scss" />
+    <Content Include="styles\table.scss" />
+    <Content Include="styles\variables.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
