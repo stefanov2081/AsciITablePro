@@ -1,4 +1,20 @@
-﻿// Copy to clipboard
+﻿// Polyfills
+if (!String.prototype.includes) {
+    String.prototype.includes = function (search, start) {
+        'use strict';
+        if (typeof start !== 'number') {
+            start = 0;
+        }
+
+        if (start + search.length > this.length) {
+            return false;
+        } else {
+            return this.indexOf(search, start) !== -1;
+        }
+    };
+}
+
+// Copy to clipboard
 function clipboardCopy() {
     "use strict"
 
@@ -6,18 +22,13 @@ function clipboardCopy() {
     var asciiCharValueElement = '.ascii-char-value';
 
     $asciiCardElement.on('click', function () {
-
         var asciiCharValueElementText = $(this).children(asciiCharValueElement).text();
         var hiddenInputElement = document.createElement("input");
 
         hiddenInputElement.setAttribute('value', asciiCharValueElementText);
-
         document.body.appendChild(hiddenInputElement);
-
         hiddenInputElement.select();
-
         document.execCommand('copy');
-
         hiddenInputElement.remove();
     });
 }
@@ -25,17 +36,15 @@ function clipboardCopy() {
 function showCopiedPopover() {
     "use strict"
 
-    let $popoverElement = $('.ascii-char-code-card');
-    let $popoverInit = $('[data-toggle="popover"]');
+    var $popoverElement = $('.ascii-char-code-card');
+    var $popoverInit = $('[data-toggle="popover"]');
 
     $popoverInit.popover();
 
     $popoverElement.on('click', function () {
-
-        let that = $(this);
+        var that = $(this);
 
         that.popover();
-
         setTimeout(function () {
             that.popover('hide');
         }, 1500);
@@ -96,7 +105,6 @@ function printAsciiDetails(char) {
     var $ul = $('<ul>').addClass('list-inline');
 
     for (var propertyKey in char) {
-
         if (propertyKey !== 'charType' &&
             propertyKey !== 'description' &&
             propertyKey !== 'abbreviation' &&
@@ -150,8 +158,11 @@ function printAsciiTable(asciiTableArray, numberOfRows) {
         $table.append($thead);
 
         for (var j = numberOfRows * i; j < numberOfRows * i + numberOfRows; j++) {
-            $tr = $('<tr>').addClass(asciiTableArray[j].charType).attr('data-index', j);
+            if (j == asciiTableArray.length) {
+                break;
+            }
 
+            $tr = $('<tr>').addClass(asciiTableArray[j].charType).attr('data-index', j);
             $tr.append($('<td>').append(asciiTableArray[j].dec));
             $tr.append($('<td>').append(asciiTableArray[j].glyph));
             $tbody.append($tr);
@@ -163,20 +174,70 @@ function printAsciiTable(asciiTableArray, numberOfRows) {
     }
 }
 
+function searchAndPrintAsciiTable(that, asciiTableArray, numberOfRows) {
+    "use stict"
 
+    var $searchKey = $('#search-key').text().trim().toUpperCase();
+    var searchvalue = that.value.trim();
+    var result = [];
+    var keyDictionary = [];
+    keyDictionary['Char'] = 'glyph';
+    keyDictionary['CHAR'] = 'glyph';
+    keyDictionary['DECIMAL'] = 'dec';
+    keyDictionary['HEX'] = 'hex';
+    keyDictionary['BINARY'] = 'bin';
+    keyDictionary['HTML CODE'] = 'htmlCode';
+    keyDictionary['ESCAPE CODE'] = 'escapeCode';
+
+    if (!keyDictionary[[$searchKey]]) {
+        return;
+    }
+
+    if (searchvalue && searchvalue && searchvalue != '') {
+        for (var i = 0; i < asciiTableArray.length; i++) {
+            if (String(asciiTableArray[i][keyDictionary[$searchKey]]).toLowerCase().includes(searchvalue.toLowerCase())) {
+                result.push(asciiTableArray[i]);
+            }
+        }
+
+        deleteAllChildren(document.getElementById('ascii-table-container'));
+        printAsciiTable(result, numberOfRows);
+    } else {
+        deleteAllChildren(document.getElementById('ascii-table-container'));
+        printAsciiTable(asciiTableArray, numberOfRows);
+    }
+}
+
+// Main
 $(function () {
     "use strict"
 
+    var numberOfRows = 32;
     var asciiTableRepository = new AsciiTableRepository();
-    printAsciiTable(asciiTableRepository.asciiTable, 32);
-    printAsciiDetails(asciiTableRepository.asciiTable[1]);
+    printAsciiTable(asciiTableRepository.asciiTable, numberOfRows);
+    printAsciiDetails(asciiTableRepository.asciiTable[0]);
+
+    $('#search-value').keyup(function () {
+        searchAndPrintAsciiTable(this, asciiTableRepository.asciiTable, numberOfRows)
+    });
 
     $('tr').click(function () {
         var index = $(this).attr('data-index');
 
         if (index) {
             clearAsciiDetails();
-            printAsciiDetails(asciiTableRepository.asciiTable[$(this).attr('data-index')]);
+            printAsciiDetails(asciiTableRepository.asciiTable[index]);
         }
     });
 });
+
+//Dropdown Option Select Text Change Function
+(function () {
+    var $dropdownOptionElement = $('.dropdown-item');
+    var $selectElement = $('#selected');
+    var classActive = 'active';
+
+    $dropdownOptionElement.click(function () {
+        $selectElement.text($(this).text()).addClass(classActive);
+    });
+})();

@@ -52,7 +52,6 @@
 })();
 
 //Dropdown Option Select Text Change Function
-
 (function () {
 
     let $dropdownOptionElement = $('.dropdown-item');
