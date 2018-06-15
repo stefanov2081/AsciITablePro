@@ -74,9 +74,9 @@
     <Content Include="scripts\control-char.js" />
     <Content Include="scripts\printable-char.js" />
     <Content Include="scripts\script.js" />
-    <Content Include="styles\mixins.css" />
-    <Content Include="styles\mixins.min.css" />
-    <Content Include="styles\style.css" />
+    <Content Include="styles\style.css">
+      <DependentUpon>style.scss</DependentUpon>
+    </Content>
     <Content Include="styles\style.min.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -84,6 +84,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="styles\breakpoints.scss" />

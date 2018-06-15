@@ -28,7 +28,7 @@
         }
 
         $table.append($tbody);
-        $tableContainer = $('<div>').addClass('çol').append($table);
+        $tableContainer = $('<div>').addClass('col').append($table);
         $div.append($tableContainer);
     }
 
