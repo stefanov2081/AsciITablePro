@@ -1,4 +1,4 @@
-﻿function printAsciiTable(asciiTableRepository, numberOfRows) {
+﻿function printAsciiTable(asciiTableArray, numberOfRows) {
     "use strict"
 
     var $div = $('<div>').addClass('ascii-table-container row');
@@ -9,7 +9,7 @@
     var $tbody;
     var $tr;
 
-    for (var i = 0; i < asciiTableRepository.asciiTable.length / numberOfRows; i++) {
+    for (var i = 0; i < asciiTableArray.length / numberOfRows; i++) {
         $table = $('<table>').addClass('ascii-table');
         $thead = $('<thead>');
         $tbody = $('<tbody>');
@@ -21,24 +21,45 @@
         $table.append($thead);
 
         for (var j = numberOfRows * i; j < numberOfRows * i + numberOfRows; j++) {
-            $tr = $('<tr>').addClass(asciiTableRepository.asciiTable[j].charType);
-            $tr.append($('<td>').append(asciiTableRepository.asciiTable[j].dec));
-            $tr.append($('<td>').append(asciiTableRepository.asciiTable[j].glyph));
+            $tr = $('<tr>').addClass(asciiTableArray[j].charType);
+            $tr.append($('<td>').append(asciiTableArray[j].dec));
+            $tr.append($('<td>').append(asciiTableArray[j].glyph));
             $tbody.append($tr);
         }
 
         $table.append($tbody);
-        $tableContainer = $('<div>').addClass('çol').append($table);
+        $tableContainer = $('<div>').addClass('col').append($table);
         $div.append($tableContainer);
     }
+}
 
-    console.log($asciiTableContainer);
-    console.log($table);
+function printAsciiDetails(char) {
+    "use strict"
+
+    // Details header
+    var $asciiDetailsContainer = $('#ascii-details-container');
+    var $h5 = $('<h5>');
+    var span1Text;
+    
+    if (char.abbreviation) {
+       span1Text = char.abbreviation + ' ';
+    } else {
+        span1Text = char.glyph + ' ';
+    }
+
+    $h5.append($('<span>').text(span1Text));
+
+    if (char.description) {
+        var $span2 = $h5.append($('<span>').text(char.description));
+    }
+
+    $asciiDetailsContainer.append($h5);
 }
 
 $(function () {
     "use strict"
 
     var asciiTableRepository = new AsciiTableRepository();
-    printAsciiTable(asciiTableRepository, 32);
+    printAsciiTable(asciiTableRepository.asciiTable, 32);
+    printAsciiDetails(asciiTableRepository.asciiTable[1]);
 });
