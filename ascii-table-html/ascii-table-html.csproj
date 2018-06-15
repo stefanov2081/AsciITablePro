@@ -69,6 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
+    <Content Include="scripts\ascii-table-repository.js" />
+    <Content Include="scripts\char-type.js" />
+    <Content Include="scripts\control-char.js" />
+    <Content Include="scripts\printable-char.js" />
     <Content Include="scripts\script.js" />
     <Content Include="styles\mixins.css" />
     <Content Include="styles\mixins.min.css" />
