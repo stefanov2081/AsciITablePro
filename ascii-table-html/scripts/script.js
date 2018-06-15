@@ -171,9 +171,7 @@ $(function () {
     printAsciiTable(asciiTableRepository.asciiTable, 32);
     printAsciiDetails(asciiTableRepository.asciiTable[1]);
 
-    var $tr = $('tr').click(function () {
-        console.log(this);
-
+    $('tr').click(function () {
         clearAsciiDetails();
         printAsciiDetails(asciiTableRepository.asciiTable[$(this).attr('data-index')]);
     });
