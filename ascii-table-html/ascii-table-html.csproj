@@ -70,6 +70,10 @@
   <ItemGroup>
     <Content Include="index.html" />
     <Content Include="scripts\ascii-table-repository.js" />
+    <Content Include="scripts\bundle.js" />
+    <Content Include="scripts\bundle.min.js">
+      <DependentUpon>bundle.js</DependentUpon>
+    </Content>
     <Content Include="scripts\char-type.js" />
     <Content Include="scripts\control-char.js" />
     <Content Include="scripts\printable-char.js" />
@@ -84,6 +88,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

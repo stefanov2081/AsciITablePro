@@ -1,0 +1,12 @@
+[
+  {
+    "outputFileName": "scripts/bundle.js",
+    "inputFiles": [
+      "scripts/ascii-table-repository.js",
+      "scripts/char-type.js",
+      "scripts/control-char.js",
+      "scripts/printable-char.js",
+      "scripts/script.js"
+    ]
+  }
+]
