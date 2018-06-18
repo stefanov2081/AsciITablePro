@@ -83,6 +83,18 @@ a {
     background: linear-gradient(to bottom, #abc7d8, #657c70);
     -webkit-mask-image: -webkit-gradient(linear, right top, left top, from(white), to(transparent));
     -webkit-mask-image: linear-gradient(to left, white, transparent); }
+  .wrapper.scroll .card-header {
+    width: 100%;
+    padding: .35rem 1.2rem 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 1;
+    background: rgba(73, 80, 87, 0.9);
+    box-shadow: 0 3px 5px rgba(117, 117, 117, 0.35); }
+  .wrapper.scroll .card-body {
+    padding: 140px 1.4rem 1.2rem; }
 
 .ascii-container {
   max-width: 1540px;
@@ -261,6 +273,7 @@ a {
   .ascii-table th,
   .ascii-table td {
     display: inline-block;
+    height: 32px;
     padding: .25rem .75rem;
     overflow: hidden;
     white-space: nowrap;

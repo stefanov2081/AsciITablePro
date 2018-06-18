@@ -257,3 +257,18 @@ $(function () {
     gtag('js', new Date());
     gtag('config', 'UA-120990943-1');
 })();
+
+//Sticky Header Scroll
+
+(function () {
+    $(window).scroll(function () {
+        var wScroll = $(this).scrollTop();
+        var headerContainer = $('.wrapper');
+
+        if (wScroll > 200) {
+            headerContainer.addClass("scroll");
+        } else {
+            headerContainer.removeClass("scroll");
+        }
+    });
+})();
