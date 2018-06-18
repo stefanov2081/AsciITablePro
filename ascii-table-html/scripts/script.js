@@ -64,7 +64,7 @@ function createLiForAsciiDetails(label, value) {
     var $divLabel = $('<div>').addClass('ascii-char-label');
     var uppercaseRegex = /(?=[A-Z])/;
     var labelSplit = label.split(uppercaseRegex).join(" ");
-    $divLabel.text(labelSplit);
+    $divLabel.text(`${labelSplit}:`);
 
     var $divValue = $('<div>').addClass('ascii-char-value').text(value);
     var $divIcon = $('<div>').addClass('ascii-char-icon');
@@ -134,6 +134,17 @@ function clearAsciiDetails() {
     deleteAllChildren($('#ascii-details-container')[0]);
 }
 
+function addClickEventHandlerForAsciiDetails(asciiTablearray) {
+    $('tr').click(function () {
+        var index = $(this).attr('data-index');
+
+        if (index) {
+            clearAsciiDetails();
+            printAsciiDetails(asciiTablearray[index]);
+        }
+    });
+}
+
 // Ascii table
 function printAsciiTable(asciiTableArray, numberOfRows) {
     "use strict"
@@ -172,6 +183,8 @@ function printAsciiTable(asciiTableArray, numberOfRows) {
         $tableContainer = $('<div>').addClass('col').append($table);
         $div.append($tableContainer);
     }
+
+    addClickEventHandlerForAsciiDetails(asciiTableArray);
 }
 
 function searchAndPrintAsciiTable(that, asciiTableArray, numberOfRows) {
@@ -208,6 +221,8 @@ function searchAndPrintAsciiTable(that, asciiTableArray, numberOfRows) {
     }
 }
 
+
+
 // Main
 $(function () {
     "use strict"
@@ -220,20 +235,10 @@ $(function () {
     $('#search-value').keyup(function () {
         searchAndPrintAsciiTable(this, asciiTableRepository.asciiTable, numberOfRows)
     });
-
-    $('tr').click(function () {
-        var index = $(this).attr('data-index');
-
-        if (index) {
-            clearAsciiDetails();
-            printAsciiDetails(asciiTableRepository.asciiTable[index]);
-        }
-    });
 });
 
 //Dropdown Option Select Text Change Function
 (function () {
-
     var $dropdownOptionElement = $('.dropdown-item');
     var $selectElement = $('#selected');
     var classActive = 'active';
@@ -241,19 +246,4 @@ $(function () {
     $dropdownOptionElement.click(function () {
         $selectElement.text($(this).text()).addClass(classActive);
     });
-
-})();
-
-//Google Analytics
-(function () {
-
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'UA-120990943-1');
-
 })();
