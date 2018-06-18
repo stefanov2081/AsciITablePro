@@ -7,6 +7,10 @@
 
             .navbar-nav {
                 margin: 0;
+
+                .nav-link {
+                    display: none;
+                }
             }
 
             .navbar-collapse {
@@ -33,6 +37,7 @@
 
                 .dropdown {
                     margin: 0 auto;
+                    padding: 0;
 
                     &::before {
                         display: none;
@@ -68,4 +73,3 @@
         }
     }
 }
-

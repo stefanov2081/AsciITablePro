@@ -66,7 +66,7 @@
     }
 
     .dropdown {
-        /*padding-right: 2rem;*/
+        padding-right: 2rem;
 
         .active {
             color: $color-active;
@@ -93,13 +93,13 @@
             }
         }
 
-        /*&::before {
+        &::before {
             content: '';
             position: absolute;
             right: 0;
             top: -21px;
             bottom: -21px;
             border-left: 1px solid rgba($text-color-muted,.3);
-        }*/
+        }
     }
 }
