@@ -33,12 +33,19 @@
 
     tbody {
         tr {
+            border-bottom: 1px solid rgba($separator-color, .1);
             background: $color-white;
 
-            &:hover td {
-                background: $color-active;
-                color: $color-white;
-                cursor: pointer;
+            &:hover {
+                td {
+                    background: $color-active;
+                    color: $color-white;
+                    cursor: pointer;
+                }
+
+                &::before {
+                    background: rgba($color-white, .5);
+                }
             }
         }
     }
@@ -70,15 +77,15 @@
 
 .ascii-table-legend,
 .ascii-table {
-    $control-char: #fff8e1;
-    $punctuation-char: #e3f2fd;
-    $numeric-char: #ede7f6;
-    $alphabetic-upper: #e8f5e9;
-    $alphabetic-low: #f1f8e9;
-    $extended-punct: #e0e0e0;
-    $graphic-char: #ffe0b2;
-    $international-char: #fbe9e7;
-    $udefined: #eceff1;
+    $control-char: #FFD54F;
+    $punctuation-char: #64B5F6;
+    $numeric-char: #9575CD;
+    $alphabetic-upper: #81C784;
+    $alphabetic-low: #AED581;
+    $extended-punct: #E0E0E0;
+    $graphic-char: #FFB74D;
+    $international-char: #FF8A65;
+    $udefined: #90A4AE;
     $color-transparency: 1;
     $background-alpha: 1;
 
@@ -90,7 +97,7 @@
         margin: 0 5px 0 0;
         line-height: .9rem;
         -webkit-box-shadow: 0px 0 0 1px $shadow-color;
-                box-shadow: 0px 0 0 1px $shadow-color;
+        box-shadow: 0px 0 0 1px $shadow-color;
     }
 
     .control-character .fas {
@@ -130,40 +137,71 @@
     }
 
     tbody {
+        tr {
+            position: relative;
+
+            &::before {
+                content: '';
+                width: 3px;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+            }
+        }
+
         .control-character {
-            background: rgba($control-char, $background-alpha);
+            &::before {
+                background: rgba($control-char, $background-alpha);
+            }
         }
 
         .punctuation {
-            background: rgba($punctuation-char, $background-alpha);
+            &::before {
+                background: rgba($punctuation-char, $background-alpha);
+            }
         }
 
         .numeric-digit {
-            background: rgba($numeric-char, $background-alpha);
+            &::before {
+                background: rgba($numeric-char, $background-alpha);
+            }
         }
 
         .alphabetic-uppercase {
-            background: rgba($alphabetic-upper, $background-alpha);
+            &::before {
+                background: rgba($alphabetic-upper, $background-alpha);
+            }
         }
 
         .alphabetic-lowercase {
-            background: rgba($alphabetic-low, $background-alpha);
+            &::before {
+                background: rgba($alphabetic-low, $background-alpha);
+            }
         }
 
         .extended-punctuation {
-            background: rgba($extended-punct, $background-alpha);
+            &::before {
+                background: rgba($extended-punct, $background-alpha);
+            }
         }
 
         .graphic-character {
-            background: rgba($graphic-char, $background-alpha);
+            &::before {
+                background: rgba($graphic-char, $background-alpha);
+            }
         }
 
         .international {
-            background: rgba($international-char, $background-alpha);
+            &::before {
+                background: rgba($international-char, $background-alpha);
+            }
         }
 
         .undefined {
-            background: rgba($udefined, $background-alpha);
+            &::before {
+                background: rgba($udefined, $background-alpha);
+            }
         }
     }
 }
