@@ -7,6 +7,10 @@
       "scripts/control-char.js",
       "scripts/printable-char.js",
       "scripts/script.js"
-    ]
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
   }
 ]
