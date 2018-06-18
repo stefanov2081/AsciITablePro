@@ -17,52 +17,54 @@
 <body>
     <div class="wrapper">
         <div class="container ascii-container">
-            <div class="row">
-                <div class="col-12">
-                    <nav class="navbar navbar-expand-lg ascii-nav">
-                        <a class="navbar-brand" href="http://www.dev-grid.com">
-                            <span class="font-weight-light">THE</span>
-                            <span class="font-weight-bold">DEV</span>
-                            <span class="font-weight-light">GRID</span>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fas fa-bars"></i>
-                        </button>
+            <header>
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand-lg ascii-nav">
+                            <a class="navbar-brand" href="http://www.dev-grid.com">
+                                <span class="font-weight-light">THE</span>
+                                <span class="font-weight-bold">DEV</span>
+                                <span class="font-weight-light">GRID</span>
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <i class="fas fa-bars"></i>
+                            </button>
 
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <div class="search-container">
-                                <form class="form-inline form-with-icon">
-                                    <span class="form-icon">
-                                        <i class="fas fa-search"></i>
-                                    </span>
-                                    <input id="search-value" class="form-control" type="search" placeholder="Search by..." aria-label="Search">
-                                </form>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <div class="search-container">
+                                    <form class="form-inline form-with-icon">
+                                        <span class="form-icon">
+                                            <i class="fas fa-search"></i>
+                                        </span>
+                                        <input id="search-value" class="form-control" type="search" placeholder="Search by..." aria-label="Search">
+                                    </form>
 
-                                <div class="dropdown">
-                                    <button id="search-key" class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span id="selected" class="active">Decimal</span>
-                                        <i class="fas fa-caret-down"></i>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                        <li class="dropdown-item">Char</li>
-                                        <li class="dropdown-item">Binary</li>
-                                        <li class="dropdown-item">Oct</li>
-                                        <li class="dropdown-item">Decimal</li>
-                                        <li class="dropdown-item">Hex</li>
-                                        <li class="dropdown-item">Escape Code</li>
-                                        <li class="dropdown-item">HTML Code</li>
-                                    </ul>
+                                    <div class="dropdown">
+                                        <button id="search-key" class="btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <span id="selected" class="active">Decimal</span>
+                                            <i class="fas fa-caret-down"></i>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <li class="dropdown-item">Char</li>
+                                            <li class="dropdown-item">Binary</li>
+                                            <li class="dropdown-item">Oct</li>
+                                            <li class="dropdown-item">Decimal</li>
+                                            <li class="dropdown-item">Hex</li>
+                                            <li class="dropdown-item">Escape Code</li>
+                                            <li class="dropdown-item">HTML Code</li>
+                                        </ul>
+                                    </div>
                                 </div>
+                                <ul class="navbar-nav">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="http://www.dev-grid.com">Ascii Table</a>
+                                    </li>
+                                </ul>
                             </div>
-                            <ul class="navbar-nav">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="http://www.dev-grid.com">Ascii Table</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
+                        </nav>
+                    </div>
                 </div>
-            </div>
+            </header>
 
             <div class="row">
                 <div class="col-12">
@@ -118,7 +120,17 @@
                     </div>
                 </div>
             </div>
+
         </div>
+
+        <footer>
+            <div class="footer">
+                <p class="text-center text-white">
+                    &#64; 2018 All rights reserved.
+                </p>
+            </div>
+        </footer>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>

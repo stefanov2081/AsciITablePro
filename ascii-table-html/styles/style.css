@@ -71,8 +71,7 @@ a {
 .wrapper {
   background: -webkit-gradient(linear, left top, left bottom, from(#d0dee4), to(#fdfdfd));
   background: linear-gradient(to bottom, #d0dee4, #fdfdfd);
-  width: 100%;
-  height: 100vh; }
+  width: 100%; }
   .wrapper::before {
     content: "";
     position: fixed;
@@ -87,8 +86,9 @@ a {
 
 .ascii-container {
   max-width: 1540px;
+  min-height: calc(100vh - 72px);
+  margin: 0 auto 1rem;
   position: relative;
-  margin-bottom: 1rem;
   background: rgba(255, 255, 255, 0.8);
   -webkit-box-shadow: inherit;
   box-shadow: 0 3px 5px rgba(117, 117, 117, 0.35); }
@@ -358,4 +358,10 @@ a {
 .ascii-table-legend tbody .undefined,
 .ascii-table tbody .undefined {
   background: #eceff1; }
+
+.footer {
+  padding: 1rem;
+  background: #495057; }
+  .footer p {
+    margin: 0; }
 
