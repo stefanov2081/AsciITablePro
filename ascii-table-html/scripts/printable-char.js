@@ -1,6 +1,7 @@
 ﻿function PrintableChar(charCode, charType, glyph, escapeCode, description) {
     this.charType = charType;
     this.bin = charCode.toString(2);
+    this.bin = "00000000".substr(this.bin.length) + this.bin;
     this.oct = charCode.toString(8);
     this.dec = charCode.toString(10);;
     this.hex = charCode.toString(16);
