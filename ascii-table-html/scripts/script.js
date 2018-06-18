@@ -64,7 +64,7 @@ function createLiForAsciiDetails(label, value) {
     var $divLabel = $('<div>').addClass('ascii-char-label');
     var uppercaseRegex = /(?=[A-Z])/;
     var labelSplit = label.split(uppercaseRegex).join(" ");
-    $divLabel.text(`${labelSplit}:`);
+    $divLabel.text(labelSplit);
 
     var $divValue = $('<div>').addClass('ascii-char-value').text(value);
     var $divIcon = $('<div>').addClass('ascii-char-icon');
@@ -84,7 +84,7 @@ function printAsciiDetails(char) {
 
     // Details header
     var $asciiDetailsContainer = $('#ascii-details-container');
-    var $h5 = $('<h5>');
+    var $h5 = $('<h5>').text('Character: ');
     var span1Text;
 
     if (char.abbreviation) {
@@ -246,4 +246,14 @@ $(function () {
     $dropdownOptionElement.click(function () {
         $selectElement.text($(this).text()).addClass(classActive);
     });
+})();
+
+//Google Analytics
+(function () {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-120990943-1');
 })();
