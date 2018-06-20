@@ -101,7 +101,7 @@ a {
   min-height: calc(100vh - 72px);
   margin: 0 auto 1rem;
   position: relative;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.5);
   -webkit-box-shadow: inherit;
   box-shadow: 0 3px 5px rgba(117, 117, 117, 0.35); }
 
